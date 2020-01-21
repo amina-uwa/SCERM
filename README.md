@@ -19,4 +19,4 @@ Swan Canning Estuarine Response Model
 <br>R_mpbr       =   0.1 
 <br>I_Kmpb       = 100.00
 <br>resuspension =   0.45, 0.45, 0.45, 0.45, 0.45,0.45, 0.45,0.45
-<br> Initial value of 150 in PHY_mpb cells using material zones for seagrass 
+<br>2.Initial value of 150 in PHY_mpb cells using material zones for seagrass 
