@@ -1,0 +1,494 @@
+
+***************************** TUFLOWFV *****************************
+
+Build version: 2019.01.010_dev
+Build date: 14/05/2019 15:00
+Build platform: Linux
+Build architecture:  x86-64
+Compiler version: Ifort 19.0.3
+Build precision: single
+GIS Module Version: 2019-02-BF
+
+********************************************************************
+
+Computer name: mc-tavish
+User name: hydro
+Execution timestamp: 28/10/2019 11:41:04
+
+Attempting to process input control file:
+Trying to open file: swan_geo.fvc ... OK. File unit: 101
+Start echoing input file:
+TIME FORMAT == ISO DATE
+REFERENCE TIME == 01/01/2001 00:00:00
+START TIME == 01/05/2018 00:00:00
+END TIME == 03/10/2018 00:00:00
+CFL EXTERNAL ==   0.9000000
+CFL INTERNAL ==   0.9000000
+TIMESTEP LIMITS ==   0.1000000E+00,    5.000000
+TURBULENCE UPDATE DT ==    600.0000
+DISPLAY DT ==    600.0000
+MOMENTUM MIXING MODEL == SMAGORINSKY
+SCALAR MIXING MODEL == SMAGORINSKY
+SPHERICAL == .FALSE.
+LONG WAVE RADIATION MODEL == 1
+SW RADIATION ALBEDO (MEAN AT EQUATOR) ==   0.8000000E-01
+INCLUDE HEAT == .TRUE.
+INCLUDE SALINITY == .TRUE.
+COUPLE SALINITY DENSITY == .TRUE.
+INCLUDE TEMPERATURE == .TRUE.
+COUPLE TEMPERATURE DENSITY == .TRUE.
+INCLUDE SEDIMENT == .FALSE.
+SPATIAL ORDER == 1, 2
+VERTICALGRADIENTLIMITER == MC
+BOTTOM DRAG MODEL == KS
+EQUATION OF STATE == UNESCO
+VERTICAL MIXING MODEL == EXTERNAL
+EXTERNAL TURBULENCE MODEL DIR == ../External/GOTM/
+WATER QUALITY MODEL == EXTERNAL
+EXTERNAL WATER QUALITY MODEL DIR == ../External/AED2/
+STABILITY LIMITS ==    15.00000    ,    15.00000
+WARNING: Wet depth is less than dry depth. Momentum will never be switched off
+CELL DRY/WET DEPTHS ==   0.2000000E-01,   0.2000000E-01
+G ==    9.810000
+LATITUDE ==   -31.95550
+REFERENCE SALINITY ==    35.00000
+REFERENCE TEMPERATURE ==    18.00000
+REFERENCE DENSITY ==   1000.0000
+DENSITY AIR ==    1.180000
+GLOBAL BOTTOM ROUGHNESS ==   0.2000000E-02
+GLOBAL HORIZONTAL EDDY VISCOSITY (SMAG COEFF) ==   0.2000000
+GLOBAL HORIZONTAL SCALAR DIFFUSIVITY (SMAG COEFF) ==   0.2000000
+DIFFUSIVITY LIMITER DT ==    30.00000
+KINEMATIC VISCOSITY ==   0.1000000E-05
+GLOBAL VERTICAL EDDY VISCOSITY LIMITS ==   0.1000000E-03,    9999.000
+GLOBAL VERTICAL SCALAR DIFFUSIVITY LIMITS ==   0.1000000E-05,    9999.000
+GEOMETRY2D == ../Geo/Swan_Canning_v3_001_Seagrass_Fremantle_NS_v3_BC.2dm
+VERTICAL MESH TYPE == Z
+LAYER FACE FILE == ../Geo/layers.csv
+SURFACE SIGMA LAYERS == 6
+MINIMUM LAYER THICKNESS ==   0.1000000E+00
+CELL 3D DEPTH ==   0.5000000
+ECHO GEOMETRY NETCDF == .TRUE.
+MATERIAL == 1
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 2
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 3
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 4
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 5
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 6
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 7
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 8
+  BOTTOM ROUGHNESS ==   0.5000000E-02
+END MATERIAL
+MATERIAL == 9
+  BOTTOM ROUGHNESS ==   0.8000000E-02
+END MATERIAL
+MATERIAL == 10
+  BOTTOM ROUGHNESS ==   0.5000000E-01
+END MATERIAL
+NTRACER == 1
+INITIAL CONDITION 2D == ../BCs/Initial/IC_AED2_20180501.csv
+BC == W10, ../BCs/Met/swan_met_southperth_2008_2018.csv
+  BC HEADER ==  ISOTime, Wx, Wy
+  BC SCALE ==    1.100000,   1.100000
+END BC
+BC == AIR_TEMP, ../BCs/Met/swan_met_southperth_2008_2018.csv
+  BC HEADER ==  ISOTime, ATemp
+END BC
+BC == REL_HUM, ../BCs/Met/swan_met_southperth_2008_2018.csv
+  BC HEADER ==  ISOTime, Rel_Hum
+END BC
+BC == SW_RAD, ../BCs/Met/swan_met_southperth_2008_2018.csv
+  BC HEADER ==  ISOTime, Sol_Rad
+END BC
+BC == LW_NET, ../BCs/Met/swan_met_southperth_2008_2018.csv
+  BC HEADER ==  ISOTime, LW_Net
+END BC
+BC == PRECIP, ../BCs/Met/swan_rain_southperth_2008_2018.csv
+  BC HEADER ==  ISOTime, Precip
+END BC
+BC == WL, 1, ../BCs/Tide/Fremantle_Inflow.csv
+  BC HEADER ==  ISOTime, wl, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    407429.4    ,    6483342.    , ../BCs/Flow/Upper_Swan_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    401873.5    ,    6470737.    , ../BCs/Flow/Bennet_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    402026.8    ,    6469682.    , ../BCs/Flow/Helena_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    406477.8    ,    6478763.    , ../BCs/Flow/Susannah_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    405790.6    ,    6481842.    , ../BCs/Flow/Ellenbrook_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    405662.3    ,    6474546.    , ../BCs/Flow/Jane_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+BC == QC,    398474.6    ,    6466750.    , ../BCs/Flow/Bayswater_Inflow.csv
+  BC HEADER ==  ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA, BGA_RHO, BGA_IN
+END BC
+OUTPUT DIR == ../Output/
+WRITE RESTART DT ==    120.0000
+OUTPUT == NETCDF
+  OUTPUT PARAMETERS ==  H, V, W, D, SAL, TEMP, WQ_ALL, WQ_DIAG_PHY_TCHLA, WQ_DIAG_TOT_TURBIDITY, WQ_DIAG_TOT_TN, WQ_DIAG_TOT_TP, WQ_DIAG_TOT_TOC, WQ_DIAG_TOT_TSS, WQ_DIAG_TOT_PAR, WQ_DIAG_TOT_EXTC, WQ_DIAG_TOT_LIGHT, WQ_DIA
+  OUTPUT INTERVAL ==    7200.000
+END OUTPUT
+OUTPUT == NETCDF
+  SUFFIX == AED_DIAG
+  OUTPUT PARAMETERS ==  D, H, WQ_DIAG_ALL,
+  OUTPUT INTERVAL ==    86400.00
+END OUTPUT
+OUTPUT == FLUX
+  OUTPUT INTERVAL ==    7200.000
+END OUTPUT
+Closing file unit: 101
+Finished echoing input file.
+Configuring "AED2" external module... Successful.
+Successful.
+
+Attempting to build model domain object/s:
+
+Processing mesh geometry file/s:
+Reading 2dm mesh file...
+Trying to open file: ../Geo/Swan_Canning_v3_001_Seagrass_Fremantle_NS_v3_BC.2dm ... OK. File unit: 101
+Closing file unit: 101
+Finished reading 2dm mesh file.
+
+Processing mesh face connections...
+Finished processing mesh face connections.
+
+Reading 3D layer specification file...
+Trying to open file: ../Geo/layers.csv ... OK. File unit: 101
+Trying to open file: ../Geo/layers.csv ... OK. File unit: 102
+Z, columns read from csvfile. 16 lines successfully read.
+Closing file unit: 102
+Finished reading 3D layer specification file.
+
+Found 12642 nodes.
+Found 13012 2D cells.
+Found 27 nodestrings.
+Mesh geometry file/s succesfully processed.
+
+Constructing domain, comprising:
+ 13012 2D cells.
+ 130310 3D cells.
+ 260592 3D faces.
+Constructing node object...OK
+Constructing cell object...OK
+Constructing face object...OK
+Constructing external mode objects...OK
+Echoing geometry data:
+Trying to open file: swan_geo_geo.nc ...OK.
+Closing file: swan_geo_geo.nc
+
+Successfully built model domain object/s.
+
+Attempting to initialise atmospheric module:
+Successfully initialised atmospheric module.
+
+Attempting to initialise external turbulence model:
+Initialising "GOTM" external turbulence module:
+Succesfully initialised external turbulence model.
+
+Attempting to initialise model structural configurations:
+Constructing struct object...
+Finished constructing struct object
+Successfully initialised model structural configurations.
+
+Attempting to initialise external wq model:
+Initialising "AED2" external module:
+Successful.
+25 water quality variables to be simulated:
+  TRC_age
+  NCS_ss1
+  NCS_ss2
+  OXY_oxy
+  SIL_rsi
+  NIT_amm
+  NIT_nit
+  PHS_frp
+  PHS_frp_ads
+  OGM_doc
+  OGM_poc
+  OGM_don
+  OGM_pon
+  OGM_dop
+  OGM_pop
+  OGM_docr
+  OGM_donr
+  OGM_dopr
+  OGM_cpom
+  PHY_grn
+  PHY_bga
+  PHY_crypt
+  PHY_diatom
+  PHY_dino
+  PHY_dino_IN
+Succesfully initialised external wq model.
+
+Attempting to initialise model boundary conditions:
+Constructing fvbc object...
+
+BC 1, Type=W10
+BC variable name/s = TIME, W10_X, W10_Y
+BC file header/s = ISOTime, Wx, Wy
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00
+BC variable scale/s =  1.10E+00        1.10E+00
+BC variable default/s =       NaN             NaN
+Trying to open file: ../BCs/Met/swan_met_southperth_2008_2018.csv ... OK. File unit: 102
+ISOTime,Wx,Wy, columns read from csvfile. 10809 lines successfully read.
+Closing file unit: 102
+BC 1 is OK
+
+BC 2, Type=AIR_TEMP
+BC variable name/s = TIME, AIR_TEMP
+BC file header/s = ISOTime, ATemp
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00
+BC variable scale/s =  1.00E+00
+BC variable default/s =       NaN
+Trying to open file: ../BCs/Met/swan_met_southperth_2008_2018.csv ... OK. File unit: 102
+ISOTime,ATemp, columns read from csvfile. 10809 lines successfully read.
+Closing file unit: 102
+BC 2 is OK
+
+BC 3, Type=REL_HUM
+BC variable name/s = TIME, REL_HUM
+BC file header/s = ISOTime, Rel_Hum
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00
+BC variable scale/s =  1.00E+00
+BC variable default/s =       NaN
+Trying to open file: ../BCs/Met/swan_met_southperth_2008_2018.csv ... OK. File unit: 102
+ISOTime,Rel_Hum, columns read from csvfile. 10809 lines successfully read.
+Closing file unit: 102
+BC 3 is OK
+
+BC 4, Type=SW_RAD
+BC variable name/s = TIME, SW_RAD
+BC file header/s = ISOTime, Sol_Rad
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00
+BC variable scale/s =  1.00E+00
+BC variable default/s =       NaN
+Trying to open file: ../BCs/Met/swan_met_southperth_2008_2018.csv ... OK. File unit: 102
+ISOTime,Sol_Rad, columns read from csvfile. 10809 lines successfully read.
+Closing file unit: 102
+BC 4 is OK
+
+BC 5, Type=LW_NET
+BC variable name/s = TIME, LW_NET
+BC file header/s = ISOTime, LW_Net
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00
+BC variable scale/s =  1.00E+00
+BC variable default/s =       NaN
+Trying to open file: ../BCs/Met/swan_met_southperth_2008_2018.csv ... OK. File unit: 102
+ISOTime,LW_Net, columns read from csvfile. 10809 lines successfully read.
+Closing file unit: 102
+BC 5 is OK
+
+BC 6, Type=PRECIP
+Subtype=1
+BC variable name/s = TIME, PRECIP, PRECIP_TEMP
+BC file header/s = ISOTime, Precip, PRECIP_TEMP
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN
+Trying to open file: ../BCs/Met/swan_rain_southperth_2008_2018.csv ... OK. File unit: 102
+WARNING: PRECIP_TEMP column not found in csv file. Assigning a value of             NaN
+ISOTime,Precip, columns read from csvfile. 453 lines successfully read.
+Closing file unit: 102
+BC 6 is OK
+
+BC 7, Type=WL
+Subtype=1
+BC Nodestring id = 1
+BC variable name/s = TIME, WL, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, wl, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Tide/Fremantle_Inflow.csv ... OK. File unit: 102
+ISOTime,wl,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 11700 lines successfully read.
+Closing file unit: 102
+BC 7 is OK
+
+BC 8, Type=QC
+Subtype=1
+Cell id=13011
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Upper_Swan_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 11700 lines successfully read.
+Closing file unit: 102
+BC 8 is OK
+
+BC 9, Type=QC
+Subtype=1
+Cell id=11126
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Bennet_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 52596 lines successfully read.
+Closing file unit: 102
+BC 9 is OK
+
+BC 10, Type=QC
+Subtype=1
+Cell id=10974
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Helena_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 52596 lines successfully read.
+Closing file unit: 102
+BC 10 is OK
+
+BC 11, Type=QC
+Subtype=1
+Cell id=12292
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Susannah_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 52596 lines successfully read.
+Closing file unit: 102
+BC 11 is OK
+
+BC 12, Type=QC
+Subtype=1
+Cell id=12688
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Ellenbrook_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 52596 lines successfully read.
+Closing file unit: 102
+BC 12 is OK
+
+BC 13, Type=QC
+Subtype=1
+Cell id=11822
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Jane_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 52596 lines successfully read.
+Closing file unit: 102
+BC 13 is OK
+
+BC 14, Type=QC
+Subtype=1
+Cell id=8171
+BC variable name/s = TIME, Q, SAL, TEMP, TRACE_1, WQ_1, WQ_2, WQ_3, WQ_4, WQ_5, WQ_6, WQ_7, WQ_8, WQ_9, WQ_10, WQ_11, WQ_12, WQ_13, WQ_14, WQ_15, WQ_16, WQ_17, WQ_18, WQ_19, WQ_20, WQ_21, WQ_22, WQ_23, WQ_24, WQ_25
+BC file header/s = ISOTime, Flow, Sal, Temp, TRACE_1, AGE, SS1, SS2, Oxy, Sil, Amm, Nit, FRP, FRP_ADS, DOC, POC, DON, PON, DOP, POP, DOCR, DONR, DOPR, CPOM, GRN, CRYPT, DIATOM, DINO, DINO_IN, BGA
+BC reference time = 01/01/2001 00:00:00
+BC time units = HOURS
+BC variable offset/s =  0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00        0.00E+00
+BC variable scale/s =  1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00        1.00E+00
+BC variable default/s =       NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN             NaN
+Trying to open file: ../BCs/Flow/Bayswater_Inflow.csv ... OK. File unit: 102
+ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA, columns read from csvfile. 52596 lines successfully read.
+Closing file unit: 102
+BC 14 is OK
+
+Finished constructing fvbc object.
+
+Initialising ghost cell boundary conditions...
+Finished initialising ghost cell boundary conditions.
+
+Initialising face object boundary conditions...
+Finished initialising face object boundary conditions.
+
+Successfully initialised model boundary conditions.
+
+Attempting to generate model initial conditions:
+Trying to open file: ../BCs/Initial/IC_AED2_20180501.csv ... OK. File unit: 102
+ID,WL,U,V,SAL,TEMP,TRACE_1,WQ_1,WQ_2,WQ_3,WQ_4,WQ_5,WQ_6,WQ_7,WQ_8,WQ_9,WQ_10,WQ_11,WQ_12,WQ_13,WQ_14,WQ_15,WQ_16,WQ_17,WQ_18,WQ_19,WQ_20,WQ_21,WQ_22,WQ_23,WQ_24,WQ_25, columns read from csvfile. 13012 lines successfully read.
+Closing file unit: 102
+Successfully generated model initial conditions.
+
+Attempting to initialise model output:
+
+Allocating output object memory:
+Memory allocation OK.
+
+Processing output requests:
+Processing request 1 is...
+OK.
+Processing request 2 is...
+OK.
+Processing request 3 is...
+OK.
+
+Opening output files...
+Trying to open file: ../Output/swan_geo.nc ...OK
+Trying to open file: ../Output/swan_geo_AED_DIAG.nc ...OK
+Trying to open file: ../Output/swan_geo_FLUX.csv ... OK. File unit: 102
+
+Successfully initialised model output.
+
+Running simulation
+Number of OpenMP threads=6
+Thread stacksize=4194304
+
+Entering timestep loop
+t = 01/05/2018 00:00:00.  dt =   0.000 /  0.000 s.  elapsed time =       0.0 s.
+    Writing NETCDF output. t = 01/05/2018 00:00:00.
+    Writing NETCDF output. t = 01/05/2018 00:00:00.
+    Writing nodestring flux output. t = 01/05/2018 00:00:00.
+t = 01/05/2018 00:10:03.  dt =   4.981 /  0.311 s.  elapsed time =      54.3 s.
