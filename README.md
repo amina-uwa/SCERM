@@ -7,7 +7,7 @@ Swan Canning Estuarine Response Model
 <br> Tide data are from 1/01/1984 to 30/09/2018
 <br><br><br><br><br>
 Changed parameters in AED.nml
-old	&nbsp; &nbsp; &nbsp; &nbsp; new
+old         	new
 Fsed_oxy =-40.0,-80.0,-50.0,-35.0,-50.0,-35.0,-30,-20.0,-10.0,-35.0<br> Fsed_oxy = -40.0,-80.0,-50.0,-35.0,-50.0,-35.0,-20,-20.0,-10.0,0.0
 R_mpbg       =   0.60 <br><br><br><br><br><br><br><br><br><br><br><br>	 R_mpbg       =   1.0 
 R_mpbr       =   0.06 <br><br><br><br><br><br><br><br><br><br><br><br>	 R_mpbr       =   0.1 
