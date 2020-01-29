@@ -128,29 +128,29 @@ INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20180501.csv
 !BOUNDARY CONDITIONS
 ! Met______________________________________________________________
 
-bc == W10, ..\BCs\Met\swan_met_southperth_2008_2018.csv
+bc == W10, ..\BCs\Met\SP_Met_2007_2019.csv
   bc header == ISOTime,Wx,Wy
   bc scale  == 1.1,1.1
 end bc
 
-bc == AIR_TEMP, ..\BCs\Met\swan_met_southperth_2008_2018.csv
+bc == AIR_TEMP, ..\BCs\Met\SP_Met_2007_2019.csv
   bc header == ISOTime,ATemp
 end bc
 
-bc == REL_HUM, ..\BCs\Met\swan_met_southperth_2008_2018.csv
+bc == REL_HUM, ..\BCs\Met\SP_Met_2007_2019.csv
   bc header == ISOTime,Rel_Hum
 end bc
 
-bc == SW_RAD, ..\BCs\Met\swan_met_southperth_2008_2018.csv
+bc == SW_RAD, ..\BCs\Met\SP_Met_2007_2019.csv
   bc header == ISOTime,Sol_Rad
 end bc
 
-bc == LW_NET, ..\BCs\Met\swan_met_southperth_2008_2018.csv
+bc == LW_NET, ..\BCs\Met\SP_Met_2007_2019.csv
   bc header == ISOTime,LW_Net
   
 end bc
 
-bc == PRECIP, ..\BCs\Met\swan_rain_southperth_2008_2018.csv
+bc == PRECIP, ..\BCs\Met\SP_Rain_2007_2019.csv
   bc header == ISOTime,Precip
 end bc
 
@@ -161,7 +161,7 @@ end bc
 
 ! Fremantle___________________________________________________________
 
-bc == WL,1, ..\BCs\Tide\Fremantle_Inflow.csv
+bc == WL,1, ..\BCs\Tide\Fremantle_Inflow_2019_ARMS.csv
   bc header ==  ISOTime,wl,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
 end bc
 
@@ -169,7 +169,7 @@ end bc
 
 ! Upper Swan_______________________________________________________
 
-bc == QC,407429.42860000,6483342.00910000, ..\BCs\Flow\Upper_Swan_Inflow.csv
+bc == QC,407429.42860000,6483342.00910000, ..\BCs\Flow\Upper_Swan_Inflow_2000.csv
   bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
 end bc
 
