@@ -7,8 +7,8 @@
 !_________________________________________________________________
 time format == ISODATE
 reference time == 01/01/2001
-start time == 01/04/2018 00:00:00
-end time == 03/04/2018 00:00:00
+start time == 15/03/2016 00:00:00
+end time == 01/04/2017 00:00:00
 cfl external == 0.90
 cfl internal == 0.90
 timestep limits == 0.1, 5.
@@ -120,7 +120,7 @@ Ntracer == 1
 !initial temperature == 18.0
 !initial tracer concentration == 0.0
 
-INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20170401.csv
+INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20160315.csv
 !restart file == swan.rst
 !use restart file time == 1
 
@@ -229,18 +229,4 @@ end bc
 !bc == transport, ..\..\UpperSwan_2008_2011_oxy_grid_TRANSPORT\Output\swan_trans.nc
 !end bc
 
-
-!OUTPUT COMMANDS
-!_________________________________________________________________
-
-output dir == ..\Output\
-write restart dt == 120.
-
-output == netcdf
-  output parameters == h,v,w,D,Sal,Temp,trace_1,wq_all,wq_diag_all
-  output interval   == 7200.0
-end output
-
-output == flux
-  output interval == 7200
-end output
+include == include_output.fvc

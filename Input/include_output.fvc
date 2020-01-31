@@ -1,0 +1,14 @@
+!OUTPUT COMMANDS
+!_________________________________________________________________
+
+output dir == ..\Output\
+write restart dt == 120.
+
+output == netcdf
+  output parameters == h,v,w,D,Sal,Temp,trace_1,wq_all,wq_diag_all
+  output interval   == 7200.0
+end output
+
+output == flux
+  output interval == 7200
+end output
