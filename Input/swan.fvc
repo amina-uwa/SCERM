@@ -7,8 +7,8 @@
 !_________________________________________________________________
 time format == ISODATE
 reference time == 01/01/2001
-start time == 01/05/2018 00:00:00
-end time == 03/10/2018 00:00:00
+start time == 01/04/2018 00:00:00
+end time == 03/04/2018 00:00:00
 cfl external == 0.90
 cfl internal == 0.90
 timestep limits == 0.1, 5.
@@ -37,8 +37,8 @@ equation of state == UNESCO
 
 vertical mixing model == external !parametric !constant
 external turbulence model dir == ..\External\GOTM\
-waterqualitymodel == EXTERNAL
-external water quality model dir == ..\External\AED2\
+!waterqualitymodel == EXTERNAL
+!external water quality model dir == ..\External\AED2\
 
 
 !MODEL PARAMETERS
@@ -120,7 +120,7 @@ Ntracer == 1
 !initial temperature == 18.0
 !initial tracer concentration == 0.0
 
-INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20180501.csv
+INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20170401.csv
 !restart file == swan.rst
 !use restart file time == 1
 
@@ -161,7 +161,7 @@ end bc
 
 ! Fremantle___________________________________________________________
 
-bc == WL,1, ..\BCs\Tide\Fremantle_Inflow_2019_ARMS.csv
+bc == WL,1, ..\BCs\Tide\Fremantle_Inflow.csv
   bc header ==  ISOTime,wl,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
 end bc
 
@@ -169,7 +169,7 @@ end bc
 
 ! Upper Swan_______________________________________________________
 
-bc == QC,407429.42860000,6483342.00910000, ..\BCs\Flow\Upper_Swan_Inflow_2000.csv
+bc == QC,407429.42860000,6483342.00910000, ..\BCs\Flow\Upper_Swan_Inflow.csv
   bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
 end bc
 
@@ -211,16 +211,16 @@ end bc
 
 ! Oxygenation _____________________________________________________
 
-!bc == QC, 401941.,6469860., ..\BCs\OxyPlants\Guildford_Oxygenation_Plant.csv
-!  bc header == ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
-!  vertical coordinate type == height
-!  vertical distribution == ..\BCs\OxyPlants\oxy_z.csv
-!end bc
-!bc == QC, 404564.,6472422., ..\BCs\OxyPlants\Cav_Oxygenation_Plant.csv
-!  bc header == ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
-!  vertical coordinate type == height
-!  vertical distribution == ..\BCs\OxyPlants\oxy_z.csv
-!end bc
+bc == QC, 401941.,6469860., ..\BCs\OxyPlants\Guildford_Oxygenation_Plant.csv
+  bc header == ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
+  vertical coordinate type == height
+  vertical distribution == ..\BCs\OxyPlants\oxy_z.csv
+end bc
+bc == QC, 404564.,6472422., ..\BCs\OxyPlants\Cav_Oxygenation_Plant.csv
+  bc header == ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,CRYPT,DIATOM,DINO,DINO_IN,BGA,BGA_RHO,BGA_IN,BGA_IP
+  vertical coordinate type == height
+  vertical distribution == ..\BCs\OxyPlants\oxy_z.csv
+end bc
 
 ! _____________________________________________________ Oxygenation
 
@@ -237,14 +237,8 @@ output dir == ..\Output\
 write restart dt == 120.
 
 output == netcdf
-  output parameters == h,v,w,d,sal,temp,wq_all,WQ_DIAG_PHY_TCHLA,WQ_DIAG_TOT_TURBIDITY,WQ_DIAG_TOT_TN,WQ_DIAG_TOT_TP,WQ_DIAG_TOT_TOC,WQ_DIAG_TOT_TSS,WQ_DIAG_TOT_PAR,WQ_DIAG_TOT_EXTC,WQ_DIAG_TOT_LIGHT,WQ_DIAG_PHY_MPBV,WQ_DIAG_PHY_BCP,WQ_DIAG_PHY_BPP,WQ_DIAG_PHY_MPB,WQ_DIAG_PHY_PAR,WQ_DIAG_PHY_PPR,WQ_DIAG_PHY_NPR,WQ_DIAG_PHY_NCP,WQ_DIAG_PHY_GPP,WQ_DIAG_OXY_ATM_OXY_FLUX,WQ_DIAG_OXY_SAT
+  output parameters == h,v,w,D,Sal,Temp,trace_1,wq_all,wq_diag_all
   output interval   == 7200.0
-end output
-
-output == netcdf
-  Suffix == AED_DIAG
-  output parameters == d,h,wq_diag_all
-  output interval   == 86400.00
 end output
 
 output == flux

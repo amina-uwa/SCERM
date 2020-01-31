@@ -450,7 +450,7 @@
    !-- General options
      dbase = '../External/AED2/aed2_phyto_pars_v4_swan.nml'
     !dbase = '../External/AED2/aed2_phyto_pars_008.nml'
-     extra_diag = .true.
+     extra_diag = .false.
     !zerolimitfudgefactor = ??
      min_rho =  900.0
      max_rho = 1200.0
