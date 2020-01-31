@@ -37,8 +37,8 @@ equation of state == UNESCO
 
 vertical mixing model == external !parametric !constant
 external turbulence model dir == ..\External\GOTM\
-!waterqualitymodel == EXTERNAL
-!external water quality model dir == ..\External\AED2\
+waterqualitymodel == EXTERNAL
+external water quality model dir == ..\External\AED2\
 
 
 !MODEL PARAMETERS
