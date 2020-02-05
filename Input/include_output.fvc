@@ -9,11 +9,11 @@ output == netcdf
   output interval   == 7200.0
 end output
 
-!output == netcdf
-!  suffix == ALL
-!  output parameters == h,v,w,D,Sal,Temp,trace_1,wq_all,wq_diag_all
-!  output interval   == 14400.0
-!end output
+output == netcdf
+  suffix == ALL
+  output parameters == h,v,w,D,Sal,Temp,trace_1,wq_all,wq_diag_all
+  output interval   == 14400.0
+end output
 
 output == flux
   output interval == 7200
