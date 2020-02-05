@@ -70,7 +70,7 @@ global vertical scalar diffusivity limits == 1.0e-06, 9999.
 geometry 2d == ..\Geo\Swan_Canning_v3_001_Seagrass_Fremantle_NS_v3_BC.2dm
 vertical mesh type == z
 layer faces == ..\Geo\layers.csv
-sigma layers == 6
+sigma layers == 4
 min bottom layer thickness == 0.1
 cell 3d depth == 5.0e-1
 Echo geometry netcdf == 1
