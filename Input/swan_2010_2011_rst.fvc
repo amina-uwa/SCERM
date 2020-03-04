@@ -120,10 +120,11 @@ Ntracer == 1
 !initial temperature == 18.0
 !initial tracer concentration == 0.0
 
-INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20100315.csv
+!INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20100315.csv
 !restart file == swan.rst
 !use restart file time == 1
 
+restart == log\swan_2010_2011.rst
 
 !BOUNDARY CONDITIONS
 ! Met______________________________________________________________
