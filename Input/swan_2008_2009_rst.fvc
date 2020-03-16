@@ -148,7 +148,7 @@ end bc
 
 bc == LW_NET, ..\BCs\Met\SP_Met_2007_2019.csv
   bc header == ISOTime,LW_Net
-  
+  bc scale == 2.5
 end bc
 
 bc == PRECIP, ..\BCs\Met\SP_Rain_2007_2019.csv
