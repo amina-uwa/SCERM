@@ -19,13 +19,16 @@ https://github.com/AquaticEcoDynamics/aed_matlab_modeltools/blob/master/TUFLOWFV
 
 Given the long timeframe of the SCERM simulations, and the data holes that exist in the field data, serveral post processing functions are required.
 
-replace_flows_with_calculated.m; This function updates flow for the following sites with flow calculated from Height by Amina.
+This function updates flow for the following sites with flow calculated from Height by Amina.
 ```
+replace_flows_with_calculated.m; 
+
      'Bayswater_Inflow.csv',...
      'Bennet_Inflow.csv',...
      'Ellenbrook_Inflow.csv',...
      'Helena_Inflow.csv',...
      'Jane_Inflow.csv',...
+     
  ```    
 Currently tidal data has not been reported for 2019, so 2019 tidal height is supplied by SCEVO via the function:
 ```
