@@ -15,9 +15,9 @@ E.G.
 
 https://github.com/AquaticEcoDynamics/aed_matlab_modeltools/blob/master/TUFLOWFV/site_processing/swan/Inflows/functions/create_interpolated_BC_for_inflow_Fremantle.m
 
-**Additional Procesing**
+**Additional Processing**
 
-Given the long timeframe of the SCERM simulations, and the data holes that exist in the field data, serveral post processing functions are required.
+Given the long timeframe of the SCERM simulations and that the data holes that exist in the field data, serveral post processing functions are required.
 
 This function updates flow for the following sites with flow calculated from Height by Amina.
 ```
