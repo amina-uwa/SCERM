@@ -17,7 +17,7 @@ end bc
 ! Other Tributaries _______________________________________________
 
 
-bc == QC,401873.53690000,6470737.25700000, ..\BCs\Flow\Bennet_Inflow.csv
+bc == QC,401873.53690000,6470737.25700000, ..\BCs\Flow\Bennett_Inflow.csv
   bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,AGE,SS1,SS2,Oxy,Sil,Amm,Nit,FRP,FRP_ADS,DOC,POC,DON,PON,DOP,POP,DOCR,DONR,DOPR,CPOM,GRN,BGA,CRYPT,DIATOM,DINO,DINO_IN
 end bc
 !
