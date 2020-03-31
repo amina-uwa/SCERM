@@ -424,10 +424,10 @@
      settling     =   1,1,1,1,4
    !-- Benthic phytoplankton group (microphytobenthos)
      do_mpb       =   1
-     R_mpbg       =   1.0 
-     R_mpbr       =   0.1 
+     R_mpbg       =   0.5 
+     R_mpbr       =   0.05 
      I_Kmpb       = 100.00
-     mpb_max      =   10000.00
+     mpb_max      =   1000.00
 	 resuspension =   0.45, 0.45, 0.45, 0.45, 0.45,0.45, 0.45,0.45
      resus_link   =  'NCS_resus'
      n_zones      =   8
