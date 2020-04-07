@@ -59,7 +59,7 @@ clear t_date t_data;
 varname = 'SAL';%Changed from s6162994
 
 
-Sal = create_interpolated_dataset(swan,varname,'s6162994','Bottom',datearray);
+Sal = create_interpolated_dataset(swan,varname,'s6162994','Surface',datearray);
 
 
 % t_depth = swan.s6161838.(varname).Depth;
