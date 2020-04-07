@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20191219</CreaDate><CreaTime>10055800</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.2\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\RasterCalculator" Date="20191219" Time="100558">RasterCalculator "("Rst_100m.tif" + 100) * 10000" "E:\Github 2018\aed_matlab_modeltools\TUFLOWFV\site_processing\swan\Salt HSI Calc\Rst_p10_me5.tif"</Process></lineage></DataProperties></Esri></metadata>

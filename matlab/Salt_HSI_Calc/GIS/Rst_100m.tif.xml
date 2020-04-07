@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20191219</CreaDate><CreaTime>09011900</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.2\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\ExtractByMask" Date="20191219" Time="090119">ExtractByMask lidar_r1_5m Buffer_100m "E:\Github 2018\aed_matlab_modeltools\TUFLOWFV\site_processing\swan\Salt HSI Calc\Rst_100m.tif"</Process></lineage></DataProperties></Esri></metadata>
