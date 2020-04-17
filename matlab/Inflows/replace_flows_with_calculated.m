@@ -2,7 +2,7 @@ function replace_flows_with_calculated
 
 thefiles = {...
     'Bayswater_Inflow.csv',...
-    'Bennet_Inflow.csv',...
+    'Bennett_Inflow.csv',...
     'Ellenbrook_Inflow.csv',...
     'Helena_Inflow.csv',...
     'Jane_Inflow.csv',...
@@ -30,6 +30,7 @@ mdate = [];
 for i = 1:length(sstr)
     mdate(i,1) = datenum(sstr{i},'dd/mm/yyyy');
 end
+disp(thefiles{bb});
 
 data = tfv_readBCfile([outdir,filename]);
 
@@ -40,7 +41,6 @@ for i = 1:length(mdate)
         data.Flow(ss(1)) = snum(i,1);
     end
 end
-
 
 
 %%%______________________________

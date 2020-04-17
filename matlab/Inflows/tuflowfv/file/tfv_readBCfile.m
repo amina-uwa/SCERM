@@ -16,7 +16,7 @@ fid = fopen(filename,'rt');
 sLine = fgetl(fid);
 
 headers = regexp(sLine,',','split');
-headers = upper(regexprep(headers,'\s',''));
+headers = regexprep(headers,'\s','');
 EOF = 0;
 inc = 1;
 
@@ -34,7 +34,7 @@ dateformatlong = 'dd/mm/yyyy HH:MM';
 for i = 1:length(headers)
     
     if i == 1
-        data.(headers{i})(:,1) = datenum(datacell{1},dateformatlong);
+        data.Date(:,1) = datenum(datacell{1},dateformatlong);
     else
         data.(headers{i})(:,1) = str2doubleq(datacell{i});
     end

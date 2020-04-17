@@ -522,6 +522,18 @@ CRYPT = FDIAT;
 DIATOM = MDIAT;
 
 DINO = KARLO; 
+%_______________________________________________________________________
+
+%Reduced totals for replication
+
+ones(1:length(datearray)) = 1;
+zeroes(1:length(datearray)) = 0;
+CHLA(CHLA < 0) = 0;
+POC_T = POC;
+PON_T = PON;
+TSS = SS1_T;
+TSS(TSS < 0) = 0;
+OP = (TP-FRP-FRP_ADS);
 % ________________________________
 
 FDIAT_IN = FDIAT * 16/106;

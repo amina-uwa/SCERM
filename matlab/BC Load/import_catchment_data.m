@@ -2,7 +2,7 @@ clear all; close all;
 
 addpath(genpath('tuflowfv'));
 
-fid = fopen('E:\Github 2018\Source_to_SCERM\SourceOutputs\39 - Scenario 1 - 2020-03-12T13-49-36.res.csv','rt');
+fid = fopen('..\..\..\Source_to_SCERM\SourceOutputs\40 - Scenario 1 - 2020-03-16T17-46-22.res.csv','rt');
 
 
 isdata = 0;

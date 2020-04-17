@@ -64,6 +64,8 @@ SS7(1:length(datearray)) = 0;
 SS8(1:length(datearray)) = 0;
 SS9(1:length(datearray)) = 0;
 
+
+
 %__________________________________________________________________________
 
 varname = 'SAL';
@@ -261,7 +263,6 @@ POC = create_interpolated_dataset(swan,varname,'s6160262','Bottom',datearray);
 
 POC(POC < 0) = 0;
 
-
 figure;plot(POC);title('POC');
 
 clear t_date t_data;
@@ -410,7 +411,18 @@ DIATOM = MDIAT;
 
 DINO = KARLO; 
 
+%_______________________________________________________________________
 
+%Reduced totals for replication
+
+ones(1:length(datearray)) = 1;
+zeroes(1:length(datearray)) = 0;
+CHLA(CHLA < 0) = 0;
+POC_T = POC;
+PON_T = PON;
+TSS = SS1_T;
+TSS(TSS < 0) = 0;
+OP = (TP-FRP-FRP_ADS);
 % ________________________________
 
 FDIAT_IN = FDIAT * 16/106;

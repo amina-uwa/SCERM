@@ -18,6 +18,8 @@ for i = 1:length(headers)
             Sal(1:length(datearray),1) = 10;
         case 'Temp'
             Temp(1:length(datearray),1) = 20;
+        case 'ones',
+            ones(1:length(datearray),1) = 1;
         case 'ISOTime'
             ISOTime = datearray;
         otherwise

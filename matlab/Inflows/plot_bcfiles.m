@@ -24,7 +24,10 @@ for k = 1:length(dirlist)
     vars = fieldnames(data);
     
     for i = 1:length(vars)
-        figure
+       fig1 =  figure;
+       set(fig1,'defaultTextInterpreter','latex')
+        set(0,'DefaultAxesFontName','Times')
+        set(0,'DefaultAxesFontSize',6)
         if strcmpi(vars{i},'Date') == 0
             
 %             for j = 1:length(sites)
@@ -54,14 +57,14 @@ for k = 1:length(dirlist)
             %--% Paper Size
             set(gcf, 'PaperPositionMode', 'manual');
             set(gcf, 'PaperUnits', 'centimeters');
-            xSize = 21;
-            ySize = 8;
+            xSize = 16;
+            ySize = 7;
             xLeft = (21-xSize)/2;
             yTop = (30-ySize)/2;
             set(gcf,'paperposition',[0 0 xSize ySize])
             
             %print(gcf,['Images_All/Guaged/',vars{i},'.eps'],'-depsc2','-painters');
-            print(gcf,[outdir,vars{i},'.png'],'-dpng','-zbuffer');
+            print(gcf,[outdir,vars{i},'.png'],'-dpng','-opengl');
             
             close all;
             
