@@ -90,7 +90,12 @@ for i = 1:length(shp)
         if j == length(vars)
             fprintf(fid,'%s\n',vars{j});
         else
-            fprintf(fid,'%s,',vars{j});
+            if j == 1
+                fprintf(fid,'ISOTime,');
+            else
+                
+                fprintf(fid,'%s,',vars{j});
+            end
         end
     end
     
