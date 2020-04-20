@@ -15,9 +15,9 @@ for i = 1:length(sss)
     
     tt = find(arms.Date == tide.Date(sss(i)));
     
-    for j = 2:length(headers)
+    %for j = 2:length(headers)
         tide.wl(sss(i)) = arms.wl(tt);
-    end
+    %end
 end
 
 
