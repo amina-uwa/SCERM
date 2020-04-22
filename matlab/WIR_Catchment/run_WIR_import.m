@@ -47,7 +47,7 @@ for i = 3:length(dirlist)
     else
         if i == length(dirlist)
             import_wir_dataset_v2(filename,type,'Append','swan.mat','Row',rows,'Column',cols,...
-                'Remove_NaN',1,'Summerise',1,'Version',2);
+                'Remove_NaN',1,'Summerise',0,'Version',2);
         else
             import_wir_dataset_v2(filename,type,'Append','swan.mat','Row',rows,'Column',cols,...
                 'Remove_NaN',1,'Summerise',0,'Version',2);
@@ -63,6 +63,12 @@ load swan.mat;
 swan = sort_WIR_data(swan);
 %
 save swan.mat swan -mat;
+
+import_drainage_data;
+
+load swan.mat;
+
+save('../modeltools/matfiles/swan.mat','swan','-mat');
 
 %export_site_information
 %
