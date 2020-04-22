@@ -15,7 +15,7 @@ addpath(genpath('Functions'));
 
 dirlist = dir('Raw');
 
-for i = 52:length(dirlist)
+for i = 3:length(dirlist)
     
     filelist = dir(['Raw/',dirlist(i).name,'/*.xlsx']);
     
@@ -47,7 +47,7 @@ for i = 52:length(dirlist)
     else
         if i == length(dirlist)
             import_wir_dataset_v2(filename,type,'Append','swan.mat','Row',rows,'Column',cols,...
-                'Remove_NaN',1,'Summerise',0,'Version',2);
+                'Remove_NaN',1,'Summerise',1,'Version',2);
         else
             import_wir_dataset_v2(filename,type,'Append','swan.mat','Row',rows,'Column',cols,...
                 'Remove_NaN',1,'Summerise',0,'Version',2);

@@ -774,8 +774,16 @@ for i = 1:length(sites)
         swan.(sites{i}).WQ_NCS_SS1 = swan.(sites{i}).WQ_TRC_SS1;
     
     end
+     if ~isfield(swan.(sites{i}),'WQ_NCS_SS1') & isfield(swan.(sites{i}),'TRC_SS1')
+
+        swan.(sites{i}).WQ_NCS_SS1 = swan.(sites{i}).TRC_SS1;
     
+    end   
+     if ~isfield(swan.(sites{i}),'WQ_TRC_SS1') & isfield(swan.(sites{i}),'TRC_SS1')
+
+        swan.(sites{i}).WQ_NCS_SS1 = swan.(sites{i}).TRC_SS1;
     
+    end     
     
 end
 

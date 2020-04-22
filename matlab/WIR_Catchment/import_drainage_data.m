@@ -148,4 +148,4 @@ for i = 1:length(snum)
     swan.(site).Flow.Depth(i,1) = 0;
 end
 
-save swan.mat swan -mat;
+save swan.mat swan -mat -v7;
