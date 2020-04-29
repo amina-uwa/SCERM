@@ -1,0 +1,28 @@
+clear all; close all;
+
+load ../modeltools/matfiles/swan.mat;
+
+
+
+daterange = [datenum(2010,01,01) datenum(2020,01,01)];
+
+
+sss =find(swan.s616004.Level.Date >= daterange(1) & ...
+    swan.s616004.Level.Date < daterange(2));
+
+level = swan.s616004.Level.Data(sss);
+ldate = swan.s616004.Level.Date(sss);
+
+pd = fitdist(level,'Normal');
+
+x_pdf = [0:0.01:1];
+y = pdf(pd,x_pdf);
+
+
+figure
+
+axes('position',[0.05 0.05 
+
+
+histogram(level,'Normalization','pdf','Orientation','horizontal')
+line(y,x_pdf,'color','r')
