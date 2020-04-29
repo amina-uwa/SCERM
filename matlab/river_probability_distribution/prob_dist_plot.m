@@ -19,15 +19,16 @@ P = prctile(level,[10 90]);
 
 fig = figure
 
-% set(fig,'defaultTextInterpreter','latex')
-% set(0,'DefaultAxesFontName','Times')
+ set(fig,'defaultTextInterpreter','latex')
+ set(fig,'DefaultAxesFontName','Times')
 % 
 % set(gca,'TickLabelInterpreter','latex')
 
 ax2 = axes('position',[0.1 0.1 0.65 0.8]);
 
 plot(ldate,level);
-ylim([-0.5 3]);
+ylim([-0.5 2.5]);
+xlim([datearray(1) datearray(end)]);
 
 set(gca,'xtick',datearray,'xticklabel',datestr(datearray,'yyyy'));
 
@@ -38,10 +39,14 @@ ax2 = axes('position',[0.8 0.1 0.15 0.8]);
 
 histogram(ax2,level,'Normalization','pdf','Orientation','horizontal');
 line(ax2,y,x_pdf,'color','r');hold on
-ylim([-0.5 3]);
+ylim([-0.5 2.5]);
 
 plot(ax2,[0 3],[P(1) P(1)],'--','color',[0.6 0.6 0.6]);
 plot(ax2,[0 3],[P(2) P(2)],'--','color',[0.6 0.6 0.6]);
+
+text(ax2,1,P(1)-0.1,['\itP_{10}',' = ',num2str(P(1))],'fontsize',6,'interpreter','tex');
+text(ax2,1,P(2)+0.1,['\itP_{90}',' = ',num2str(P(2))],'fontsize',6,'interpreter','tex');
+
 
 
 set(gcf, 'PaperPositionMode', 'manual');
