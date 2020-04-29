@@ -2,7 +2,7 @@ clear all; close all;
 
 addpath(genpath('tuflowfv'));
 
-fid = fopen('..\..\..\Source_to_SCERM\SourceOutputs\GoodNutrientsBadFlow_3 - Scenario 1 - 2020-04-24T18-52-36.res.csv','rt');
+fid = fopen('..\..\..\Source_to_SCERM\SourceOutputs\GoodNutrientsBadFlow_3 - Zones - 2020-04-29T15-54-35.res.csv','rt');
 
 
 isdata = 0;
