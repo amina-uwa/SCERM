@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20200430</CreaDate><CreaTime>13350200</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="d:\install\arcmap\desktop10.2\ArcToolbox\Toolboxes\3D Analyst Tools.tbx\HillShade" Date="20200430" Time="133502">HillShade rst_20km.tif D:\Github\SCERM\matlab\Salt_HSI_Calc\GIS\hillshade50.tif 315 45 NO_SHADOWS 50</Process></lineage></DataProperties></Esri></metadata>
