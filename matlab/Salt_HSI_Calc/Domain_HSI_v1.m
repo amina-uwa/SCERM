@@ -22,6 +22,28 @@ theyear = 2015; % This model runs from 01/12/2014 - 01/07/2016
 
 the_daterange = [datenum(theyear,02,01) datenum(theyear,03,01)];
 
+
+
+
+switch theyear
+    case 2015
+        data = load([matfile_dir,'Matfiles\',num2str(theyear-1),'\SAL.mat']);
+
+    case 2008
+        data = load([matfile_dir,'Matfiles\',num2str(theyear),'\SAL.mat']);
+
+    case 2050
+        data = load([matfile_dir,'Matfiles\',num2str(theyear),'\SAL.mat']);
+        
+        dvec = datevec(data.savedata.Time);
+        dvec(:,1) = 2010;
+        data.savedata.Time = datenum(dvec);
+        
+        level = level + 0.2;
+        
+    otherwise
+end
+
 outdir = ['Images_All/',datestr(the_daterange(1),'yyyy-mm-dd'),'_',datestr(the_daterange(end),'yyyy-mm-dd'),'/'];
 
 if ~exist(outdir,'dir')
@@ -29,13 +51,12 @@ if ~exist(outdir,'dir')
 end
 
 
-if theyear == 2015
+if theyear == 2050
     
-    data = load([matfile_dir,'Matfiles\',num2str(theyear-1),'\SAL.mat']);
+    the_daterange = [datenum(2010,02,01) datenum(2010,03,01)];
     
-else
-    data = load([matfile_dir,'Matfiles\',num2str(theyear-1),'\SAL.mat']);
 end
+
 
 ttt = find(data.savedata.Time >= the_daterange(1) & ...
     data.savedata.Time <= the_daterange(end));
@@ -200,6 +221,7 @@ axes('position',[0 0 1 1]);
 mapshow('GIS/Background_All.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI,'s','filled');
+caxis([0 0.75]);
 
 axis off
 
