@@ -169,4 +169,4 @@ include == include_catchment_tracer.fvc
 !bc == transport, ..\..\UpperSwan_2008_2011_oxy_grid_TRANSPORT\Output\swan_trans.nc
 !end bc
 
-include == include_output.fvc
+include == include_output_tracer.fvc
