@@ -8,7 +8,7 @@ inflowfile = dir(['../Inflows/BCs/Flow/','*.csv']);
 
 load('data.mat');
 
-outdir = 'Flow_Catch_3/';
+outdir = 'Flow_Catch_4/';
 
 if ~exist(outdir,'dir')
     mkdir(outdir);
@@ -22,7 +22,7 @@ for i = 1:length(inflowfile)
     
 end
 
-thetime = datenum(2017,01,01):01:datenum(2019,01,01);
+thetime = datenum(2009,01,01):01:datenum(2019,01,01);
 
 
 inflownames = {...
@@ -145,6 +145,13 @@ for i = 1:length(shp)
                 case 'OP'
                     theconv = inflow.(theBC).FRP(index_bc) * 2;
                     pvar = data.(thesite).TP.Data(index_cat) - theconv;
+                case 'TN'
+                    %theconv = inflow.(theBC).FRP(index_bc) * 2;
+                    pvar = data.(thesite).TN.Data(index_cat);
+                case 'TP'
+                    %theconv = inflow.(theBC).FRP(index_bc) * 2;
+                    pvar = data.(thesite).TP.Data(index_cat);                    
+                    
                 otherwise
                     
                     pvar =inflow.(theBC).(vars{j})(index_bc);
