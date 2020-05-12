@@ -1,13 +1,15 @@
 clear all; close all;
 
-addpath(genpath('Functions'));
+addpath(genpath('tuflowfv'));
 
 %dirlist = dir(['../Historical/','*.nc']);
-dirlist = dir(['J:\SCERM/','*.nc']);
+dirlist = dir(['Q:\SCERM\SCERM\Output/','*_All.nc']);
+
+
 for bdb = 1:length(dirlist)
     
-    ncfile = ['J:\SCERM/',dirlist(bdb).name];
-    outdir = ['J:\SCERM_Proc_Region/',regexprep(dirlist(bdb).name,'.nc',''),'/'];
+    ncfile = ['Q:\SCERM\SCERM\Output/',dirlist(bdb).name];
+    outdir = ['I:\SCERM_Proc_Region/',regexprep(dirlist(bdb).name,'.nc',''),'/'];
 
     disp(ncfile);
     mkdir(outdir);
@@ -65,6 +67,9 @@ for bdb = 1:length(dirlist)
     'WQ_DIAG_PHY_TPHYS',...
     'WQ_DIAG_PHY_MPB',...
     'WQ_DIAG_PHY_BPP',...
+    'WQ_DIAG_TOT_TURBIDITY',...
+    'WQ_DIAG_TOT_LIGHT',...
+    'WQ_DIAG_TOT_PAR',...
     };
     
     for i = 1:length(vars)
