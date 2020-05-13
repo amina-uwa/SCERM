@@ -66,6 +66,8 @@ for i = 1:length(pol2)
     else
         shp(i).Depth = 20;
     end
+    
+    disp(shp(i).Type);
         
 end
 
