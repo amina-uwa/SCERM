@@ -6,7 +6,7 @@ lat_a = regexprep(sstr(:,5),' |"|S|’’','');
 lon_a = regexprep(sstr(:,6),' |"|E|’’','');
 
 
-dates = datenum(2015,04:01:52,01);
+dates = datenum(2007,04:01:148,01);
 
 
 for i = 1:length(lat_a)

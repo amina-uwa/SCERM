@@ -5,19 +5,19 @@ addpath(genpath('tuflowfv'));
 load Export_Locations.mat;
 
 
-modlist = dir('J:\SCERM_Proc_Region/');
+modlist = dir('I:\SCERM_Proc_Region/ALL/');
 
 for ccc = 3:length(modlist)
     
     %maindir = 'Matfiles/Peel_WQ_Model_v5_2016_2017_3D_Murray/';
-    maindir = ['J:\SCERM_Proc_Region/',modlist(ccc).name,'/'];
+    maindir = ['I:\SCERM_Proc_Region/ALL/',modlist(ccc).name,'/'];
     outdir = 'Spreadsheets v13/New_Template_v6/';
     
     
     disp(maindir);
     
     numhours = 24/24;
-    numdays = 30;
+    numdays = 20;
     
     model_time_interval = 2/24;
     
