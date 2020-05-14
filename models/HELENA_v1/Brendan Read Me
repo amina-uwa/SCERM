@@ -1,0 +1,6 @@
+Hey Brendan,
+This is a sim that is mostly ready to run whilst I am at sea.
+It needs a .nml file that Matt should give you with the AED-Land module and it also needs to have the AED settings in the fvc control file changed.
+Thus far I havent had much luck getting cells to dry out again so can you also check if the cell wet/dry limits are reasonable for a flooding sim?
+Cheers,
+Chris

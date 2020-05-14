@@ -1,0 +1,201 @@
+! Swan Curvilinear Simulation
+!_________________________________________________________________
+!
+
+! SIMULATION CONFIGURATION
+!_________________________________________________________________
+spherical == 0
+include salinity == 1,1
+include temperature == 1,1
+include sediment == 0,0
+include heat == 1
+LONGWAVERADIATIONMODEL == 3
+SHORTWAVERADIATIONALBEDO == 0.25
+momentum mixing model == Smagorinsky
+scalar mixing model == Smagorinsky
+vertical mixing model == external !parametric !constant 
+external turbulence model dir == ..\External\GOTM\
+!waterqualitymodel == EXTERNAL
+!external water quality model dir == ..\External\AED2\
+spatial order == 1,2
+!horizontal gradient limiter == LCD
+vertical gradient limiter == MC
+bottom drag model == manning
+equation of state == UNESCO
+
+
+! COHESIVE SEDIMENT CONTROL FILE
+!_________________________________________________________________
+!sediment control file == PC_Plume_Sediment_002_test.fvm
+
+!TIME COMANDS
+!_________________________________________________________________
+time format == ISODATE
+reference time == 01/01/2001
+start time == 01/01/2008 09:00:00
+end time == 01/01/2009 06:00:00
+cfl external == 0.90
+cfl internal == 0.90
+timestep limits == 0.1, 5.
+turbulence update dt == 600                                     ! for GOTM (s)
+display dt == 60.                                                       
+
+!MODEL PARAMETERS
+!_________________________________________________________________
+! display depth == 1.0e-6
+stability limits == 15.0,15.0
+cell wet/dry depths == 2.0e-2, 2.0e-2                         ! <cells dry depth (m), cell wet depth (m)>
+!cell wet/dry depths == 5.0e-4, 1.0e-1
+g == 9.81
+latitude == -31.9555                                            ! <latitude in degree (-ve for southern Hemishpere)
+reference salinity == 35.0
+reference temperature == 18.0
+reference density == 1000.0
+density air == 1.18
+
+global bottom roughness == 0.025                               ! <Global roughness> 
+global horizontal eddy viscosity == 0.2                         ! <eddy viscosity coefficient/s (m2/s;-)>
+global horizontal scalar diffusivity == 0.2,0.2                 ! <diffusivity; coefficient/s (m2/s;-)>
+diffusivity limiter dt == 30.                                   ! <NOT IN MANUAL>
+kinematic viscosity == 1.0e-6                                   ! <eddy viscosity value (m2/s)>
+vertical mixing parameters ==  0.01, 0.01                       !
+global vertical eddy viscosity limits == 1.0e-04, 9999. 
+global vertical scalar diffusivity limits == 1.0e-06, 9999.
+!min vertical eddy viscosity == 1.0e-4
+
+
+!GEOMETRY
+!_________________________________________________________________
+geometry 2d == ..\Geo\swan_helena_v04a.2dm
+vertical mesh type == z
+!layer faces == ..\Geo\layers_UD.csv
+sigma layers == 3
+min bottom layer thickness == 0.1
+cell 3d depth == 5.0e-1
+
+
+! MATERIAL PROPERTIES
+!_________________________________________________________________
+material == 1													! Swan River
+  bottom roughness == 0.035
+end material
+material == 2													! Helena River
+  bottom roughness == 0.035
+end material
+material == 3													! Flood Plains
+  bottom roughness == 0.05
+end material
+
+!SCALAR PROPERTIES
+!_________________________________________________________________
+Ntracer == 3
+
+! INITIAL CONDITIONS
+!_________________________________________________________________
+initial water level == 0.04
+initial salinity == 20.0
+initial temperature == 18.0
+initial tracer concentration == 0.0
+
+INITIAL CONDITION 2D == ..\BCs\Initial\IC_a.csv
+
+
+!BOUNDARY CONDITIONS
+! Met______________________________________________________________
+
+bc == W10, ..\BCs\Met\swan_met_southperth_dirmh.csv
+  bc header == ISOTime,Wx,Wy
+  bc scale  == 1.6,1.6
+end bc
+
+bc == AIR_TEMP, ..\BCs\Met\swan_met_southperth_dirmh.csv
+  bc header == ISOTime,ATemp
+end bc
+
+bc == REL_HUM, ..\BCs\Met\swan_met_southperth_dirmh.csv
+  bc header == ISOTime,Rel_Hum
+end bc
+
+bc == SW_RAD, ..\BCs\Met\swan_met_southperth_dirmh.csv
+  bc header == ISOTime,Sol_Rad
+end bc
+
+bc == PRECIP, ..\BCs\Met\swan_rain_southperth.csv
+	bc header == ISOTime, Precip
+end bc
+
+! ______________________________________________________________Met
+
+! Narrows___________________________________________________________
+
+bc == WL, 1, ..\BCs\Tide\narrows_AHD.csv
+  bc header ==  ISOTime,wl,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+! ___________________________________________________________Narrows
+
+! Upper Swan_______________________________________________________
+
+bc == QC,407429.42860000,6483342.00910000, ..\BCs\Flow\Upper_Swan.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+
+
+! _______________________________________________________Upper Swan
+
+! Other Tributaries _______________________________________________
+
+
+bc == QC,401873.53690000,6470737.25700000, ..\BCs\Flow\Bennet.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+bc == Q, 10, ..\BCs\Flow\Helena.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+bc == QC, 406477.83510000,6478763.47990000, ..\BCs\Flow\Susannah.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+bc == QC, 405790.59060000,6481841.90570000, ..\BCs\Flow\Ellenbrook.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+bc == QC, 405662.28,6474546.3, ..\BCs\Flow\Jane.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+bc == QC, 398474.6,6466750.1, ..\BCs\Flow\Bayswater.csv
+  bc header ==  ISOTime,Flow,Sal,Temp,TRACE_1,TRACE_2,TRACE_3
+end bc
+
+
+!OUTPUT COMMANDS
+
+!_________________________________________________________________
+
+output dir == ..\Output\
+
+output == netcdf
+  output parameters == h,v,w,Sal,Temp,trace_1,trace_2,trace_3
+  output interval == 7200.00 
+end output
+
+output == datv
+  output parameters == h,v,w,Sal,Temp,trace_1
+  output interval == 21600.00 
+end output
+
+
+output == flux
+  output interval == 7200
+end output
+!output == transport
+!  output interval == 1800
+!end output
+
+
+
+write restart dt == 10.
