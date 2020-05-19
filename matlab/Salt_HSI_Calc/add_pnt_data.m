@@ -1,9 +1,9 @@
 hel = shaperead('GIS/Helena_Pnt.shp');
-ben = shaperead('gis/Bennett_Pnt.SHP');
+ben = shaperead('GIS/Bennett_Pnt.SHP');
 bay = shaperead('GIS/Bayswater_Pnt.shp');
-jan = shaperead('gis/Jane_Pnt.SHP');
+jan = shaperead('GIS/Jane_Pnt.SHP');
 sus = shaperead('GIS/Susannah_Pnt.shp');
-ell = shaperead('gis/Ellenbrook_Pnt.SHP');
+ell = shaperead('GIS/Ellenbrook_Pnt.SHP');
 
 
 %__________________________________________

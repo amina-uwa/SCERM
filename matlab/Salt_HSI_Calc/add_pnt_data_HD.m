@@ -1,5 +1,5 @@
 hel = shaperead('GIS/Helena_Pnt.shp');
-ben = shaperead('gis/Bennett_Pnt.SHP');
+ben = shaperead('GIS/Bennett_Pnt.SHP');
 
 
 

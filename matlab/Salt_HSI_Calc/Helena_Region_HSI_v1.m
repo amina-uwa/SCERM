@@ -2,12 +2,12 @@ clear all; close all;
 
 tic
 
-%shp = shaperead('GIS/pnt_20km_4m_vals.shp'); 
-shp = shaperead('GIS/Helena_region_vals.shp'); 
+%shp = shaperead('GIS/pnt_20km_4m_vals.shp');
+shp = shaperead('GIS/Helena_region_vals.shp');
 
 
 
-matfile_dir = 'D:\Cloud\Cloudstor\Shared\Aquatic Ecodynamics (AED)\AED_Swan_BB\Salt HSI Calc\';
+matfile_dir = '~/';
 
 load('../modeltools/matfiles/swan.mat');
 
@@ -16,47 +16,47 @@ ldate = swan.s616004.Level.Date;
 
 domain = shaperead('GIS/Domain.shp');
 
-theyear = 2008; % This model runs from 01/12/2014 - 01/07/2016
+theyear = 2015; % This model runs from 01/12/2014 - 01/07/2016
 
 % This is a whatever range
 
 
 
- the_daterange = [datenum(theyear,02,01) datenum(theyear,03,01)];
+ the_daterange = [datenum(theyear,04,01) datenum(theyear,05,01)];
 
 
 switch theyear
     case 2015
-        data = load([matfile_dir,'Matfiles\',num2str(theyear-1),'\SAL.mat']);
+        data = load([matfile_dir,'Matfiles/',num2str(theyear-1),'/SAL.mat']);
 
     case 2008
-        data = load([matfile_dir,'Matfiles\',num2str(theyear),'\SAL.mat']);
+        data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
 
     case 2050
-        data = load([matfile_dir,'Matfiles\',num2str(theyear),'\SAL.mat']);
-        
+        data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
+
         dvec = datevec(data.savedata.Time);
         dvec(:,1) = 2010;
         data.savedata.Time = datenum(dvec);
-        
+
         level = level + 0.2;
-        
+
     otherwise
 end
 
-outdir = ['Images/',datestr(the_daterange(1),'yyyy-mm-dd'),'_',datestr(the_daterange(end),'yyyy-mm-dd'),'/'];
+outdir = ['Images_1/',datestr(the_daterange(1),'yyyy-mm-dd'),'_',datestr(the_daterange(end),'yyyy-mm-dd'),'/'];
 
 
 if ~exist(outdir,'dir')
     mkdir(outdir);
-end     
+end
 
 %Now switch daterange to 2010 for 2050 sim
 
 if theyear == 2050
-    
+
     the_daterange = [datenum(2010,02,01) datenum(2010,03,01)];
-    
+
 end
 
 
@@ -110,7 +110,9 @@ Scrit = 10;
 Smax = 25;
 
 H90 = 0.33;
-Hrz = 1;
+ZrZ = 1.5;
+Hrz = H90 + ZrZ;
+%Hrz = 1; %
 
 Dmax = 1000;
 
@@ -126,7 +128,7 @@ HSI_veg(1:length(Hc),1) = NaN;
 
 
 for i = 1:length(Hc)
-    
+
     if inpolygon(pnt(i,1),pnt(i,2),domain.X,domain.Y)
         % Cell is in the water
         % So HSI = 1;
@@ -135,41 +137,41 @@ for i = 1:length(Hc)
         HSI_dist(i,1) = 0;
         HSI_veg(i,1) = 0;
     else
-        
+
         % Salt______________________________________
-        
+
         if Sc(i) > Smax
-            
+
             HSI_salt(i,1) = 1;
-            
+
         else
             if Sc(i) < Smax & ...
                     Sc(i) >= Scrit
-                
+
                 HSI_salt(i,1) = 1 - ((Smax-Sc(i))/(Smax-Scrit));
-                
+
             else
                 HSI_salt(i,1) = 0;
             end
         end
-        
+
         % Height______________________________________
-        
+
         if Hc(i,1) < H90
             HSI_depth(i,1) = 1;
         else
             if Hc(i,1) < Hrz & ...
                     Hc(i) >= H90
-                
+
                 HSI_depth(i,1) = (Hrz - Hc(i,1))/(Hrz-H90);
-                
+
             else
                 HSI_depth(i,1) = min([(Hc(i,1)-Hrz)/(5-Hrz),0.5]);
             end
         end
-        
+
         % Distance______________________________________
-        
+
         
         if Dc(i) >= Dmax
             HSI_dist(i,1) = 0;
@@ -177,8 +179,13 @@ for i = 1:length(Hc)
             HSI_dist(i,1) = (Dmax - Dc(i))/Dmax;
         end
         
+        % low lying cells always high HSI.
+        if Hc(i,1) < H90
+            HSI_dist(i,1) = 1;
+        end
+
         % Landcover___________________________________
-        
+
         % Landcover
 
         % -9999 = No Data
@@ -189,8 +196,8 @@ for i = 1:length(Hc)
         % 5 = roads
         % 6 = water
         % 7 = pavement / roof / misc
-        
-        
+
+
         switch Lc(i)
             case -9999
                 HSI_veg(i,1) = 0;
@@ -199,23 +206,25 @@ for i = 1:length(Hc)
             case 2
                 HSI_veg(i,1) = 0.5;
             case 3
-                HSI_veg(i,1) = 0.8;       
+                HSI_veg(i,1) = 0.5;
             case 4
-                HSI_veg(i,1) = 0;         
+                HSI_veg(i,1) = 0;
             case 5
-                HSI_veg(i,1) = 0.1;         
+                HSI_veg(i,1) = 0.1;
             case 6
-                HSI_veg(i,1) = 0.1; 
+                HSI_veg(i,1) = 0.1;
             case 7
                 HSI_veg(i,1) = 0.1;
             otherwise
         end
-        
+
     end
-    
+
 end
 
-HSI = min([HSI_salt,HSI_depth,HSI_dist,HSI_veg],[],2);
+HSI = HSI_salt.*HSI_depth.*HSI_dist.*HSI_veg;
+
+%HSI = min([HSI_salt,HSI_depth,HSI_dist,HSI_veg],[],2);
 
 figure % HSI
 
@@ -229,8 +238,8 @@ caxis([0 0.75]);
 axis off
 
 cb = colorbar('southoutside');
-title(cb,'HSI');        
-        
+title(cb,'HSI');
+
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
 xSize = 20;
@@ -241,7 +250,7 @@ set(gcf,'paperposition',[0 0 xSize ySize])
 
 saveas(gcf,[outdir,'HSI.png']);close all;
 
-        
+
 figure % HSI_salt
 
 axes('position',[0 0 1 1]);
@@ -252,8 +261,8 @@ scatter(pnt(:,1),pnt(:,2),2,HSI_salt,'s','filled');
 axis off
 
 cb = colorbar('southoutside');
-title(cb,'HSI salt');        
-        
+title(cb,'HSI salt');
+
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
 xSize = 20;
@@ -274,8 +283,8 @@ scatter(pnt(:,1),pnt(:,2),2,HSI_depth,'s','filled');
 axis off
 
 cb = colorbar('southoutside');
-title(cb,'HSI depth');        
-        
+title(cb,'HSI depth');
+
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
 xSize = 20;
@@ -285,7 +294,7 @@ yTop = (30-ySize)/2;
 set(gcf,'paperposition',[0 0 xSize ySize])
 
 saveas(gcf,[outdir,'HSI_depth.png']);close all;
-        
+
 
 figure %HSI_dist
 
@@ -297,8 +306,8 @@ scatter(pnt(:,1),pnt(:,2),2,HSI_dist,'s','filled');
 axis off
 
 cb = colorbar('southoutside');
-title(cb,'HSI dist');        
-        
+title(cb,'HSI dist');
+
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
 xSize = 20;
@@ -319,8 +328,8 @@ scatter(pnt(:,1),pnt(:,2),2,HSI_veg,'s','filled');
 axis off
 
 cb = colorbar('southoutside');
-title(cb,'HSI veg');        
-        
+title(cb,'HSI veg');
+
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
 xSize = 20;
@@ -330,14 +339,5 @@ yTop = (30-ySize)/2;
 set(gcf,'paperposition',[0 0 xSize ySize])
 
 saveas(gcf,[outdir,'HSI_veg.png']);close all;
-        
-   toc     
-        
-        
-        
-        
-        
-        
-        
-        
-    
+
+   toc
