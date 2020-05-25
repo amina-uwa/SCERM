@@ -9,7 +9,7 @@ dirlist = dir(['Q:\SCERM\SCERM\Output/','*_All.nc']);
 for bdb = 1:length(dirlist)
     
     ncfile = ['Q:\SCERM\SCERM\Output/',dirlist(bdb).name];
-    outdir = ['I:\SCERM_Proc_Region/',regexprep(dirlist(bdb).name,'.nc',''),'/'];
+    outdir = ['I:\SCERM_Proc_Region_v2/',regexprep(dirlist(bdb).name,'.nc',''),'/'];
 
     disp(ncfile);
     mkdir(outdir);
