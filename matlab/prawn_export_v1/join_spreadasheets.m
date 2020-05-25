@@ -1,10 +1,10 @@
 clear all; close all;
 
-maindir = 'Spreadsheets v13/New_Template_v6/';
+maindir = 'Spreadsheets v16/New_Template_v6/';
 
 filelist = dir([maindir,'*.csv']);
 
-fid = fopen('Master Spreadsheet v6.csv','wt');
+fid = fopen('Master Spreadsheet v10.csv','wt');
 
 fidchx = fopen([maindir,filelist(1).name],'rt');
 
