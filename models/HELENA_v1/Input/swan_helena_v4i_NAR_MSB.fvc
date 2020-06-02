@@ -181,7 +181,7 @@ end bc
 output dir == ..\Output\
 
 output == netcdf
-  output parameters == h,v,w,Sal,Temp,trace_1,trace_2,trace_3
+  output parameters == d,h,v,w,Sal,Temp,trace_1,trace_2,trace_3
   output interval == 7200.00 
 end output
 
