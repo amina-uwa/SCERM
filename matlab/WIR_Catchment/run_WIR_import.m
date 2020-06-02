@@ -15,7 +15,7 @@ addpath(genpath('Functions'));
 
 dirlist = dir('Raw');
 
-for i = length(dirlist)
+for i = 3:length(dirlist)
     
     filelist = dir(['Raw/',dirlist(i).name,'/*.xlsx']);
     
@@ -65,7 +65,7 @@ swan = sort_WIR_data(swan);
 save swan.mat swan -mat;
 
 %import_drainage_data;
-save('../modeltools/matfiles/swan.mat','swan','-mat');
+%save('../modeltools/matfiles/swan.mat','swan','-mat');
 %load swan.mat;
 
 

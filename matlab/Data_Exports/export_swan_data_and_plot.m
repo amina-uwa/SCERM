@@ -1,7 +1,7 @@
 clear all; close all;
 
 load ../modeltools/matfiles/swan.mat;
-
+%load ../WIR_Catchment/swan.mat;
 %MSB = s6161086;
 %SUC == s6161879;
 %KIN == s6161821;
@@ -30,7 +30,7 @@ titles = {...
     
 
 datearray = datenum(1995:05:2020,01,01);
-
+%datearray = datenum(1995,01:06:26,01);
 
 surface_edge_color = [ 30  50  53]./255;
 surface_face_color = [ 68 108 134]./255;
