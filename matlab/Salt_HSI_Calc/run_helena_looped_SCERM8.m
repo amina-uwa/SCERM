@@ -16,8 +16,8 @@ for i = 3:length(dirlist)
     
     disp(['Running ',dirlist(i).name]);
     
-    Helena_Region_HSI_v1(filename,theyear)
-    
+    %Helena_Region_HSI_v1(filename,theyear)
+    Full_Domain_Region_HSI_v1(filename,theyear)
     
     
 end
