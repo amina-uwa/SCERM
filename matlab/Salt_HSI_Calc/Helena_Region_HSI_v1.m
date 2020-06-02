@@ -1,6 +1,8 @@
-clear all; close all;
+function Helena_Region_HSI_v1(filename,theyear)
 
-tic
+%clear all; close all;
+
+
 
 %shp = shaperead('GIS/pnt_20km_4m_vals.shp');
 shp = shaperead('GIS/Helena_region_vals.shp');
@@ -16,7 +18,7 @@ ldate = swan.s616004.Level.Date;
 
 domain = shaperead('GIS/Domain.shp');
 
-theyear = 2015; % This model runs from 01/12/2014 - 01/07/2016
+%theyear = 2015; % This model runs from 01/12/2014 - 01/07/2016
 
 % This is a whatever range
 
@@ -24,16 +26,18 @@ theyear = 2015; % This model runs from 01/12/2014 - 01/07/2016
 
  the_daterange = [datenum(theyear,04,01) datenum(theyear,05,01)];
 
-
+tic
+ data = load(filename);
+ toc
 switch theyear
-    case 2015
-        data = load([matfile_dir,'Matfiles/',num2str(theyear-1),'/SAL.mat']);
-
-    case 2008
-        data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
+%     case 2015
+%         data = load([matfile_dir,'Matfiles/',num2str(theyear-1),'/SAL.mat']);
+% 
+%     case 2008
+%         data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
 
     case 2050
-        data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
+      %  data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
 
         dvec = datevec(data.savedata.Time);
         dvec(:,1) = 2010;
@@ -44,7 +48,7 @@ switch theyear
     otherwise
 end
 
-outdir = ['Images_1/',datestr(the_daterange(1),'yyyy-mm-dd'),'_',datestr(the_daterange(end),'yyyy-mm-dd'),'/'];
+outdir = ['F:\Cloudstor\Shared\Aquatic Ecodynamics (AED)\AED_Swan_BB\SALT_HSI_v2\Helena\',datestr(the_daterange(1),'yyyy-mm-dd'),'_',datestr(the_daterange(end),'yyyy-mm-dd'),'/'];
 
 
 if ~exist(outdir,'dir')
@@ -340,4 +344,4 @@ set(gcf,'paperposition',[0 0 xSize ySize])
 
 saveas(gcf,[outdir,'HSI_veg.png']);close all;
 
-   toc
+   
