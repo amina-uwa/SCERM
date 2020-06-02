@@ -1,0 +1,82 @@
+clear all; close all;
+
+load ../modeltools/matfiles/swan.mat;
+
+%MSB = s6161086;
+%SUC == s6161879;
+%KIN == s6161821;
+
+outdir = 'Data_Export/';
+
+mkdir(outdir);
+
+sites = {...
+    's6161086',...
+    's6161879',...
+    's6161821',...
+    };
+
+site_n = {...
+    'MSB',...
+    'SUC',...
+    'KIN',...
+    };
+
+datearray = datenum(1995:05:2020,01,01);
+
+for j = 1:length(sites)
+    
+    
+    site = sites{j};
+    sitename = site_n{j};
+    
+    
+    
+    
+    
+    
+    mdata = swan.(site).SAL.Data;
+    mdate = swan.(site).SAL.Date;
+    mdepth = swan.(site).SAL.Depth;
+    
+    udate = unique(floor(mdate));
+    
+    fid = fopen([outdir,sitename,'.csv'],'wt');
+    fprintf(fid,'Date,Surface,Bottom\n');
+    
+    int = 1;
+    
+    sur_val = [];
+    bot_val = [];
+    plot_date = [];
+    for i = 1:length(udate)
+        sss = find(floor(mdate) == udate(i));
+        
+        if ~isempty(sss)
+            
+            [~,bot] = min(mdepth(sss));
+            [~,sur] = max(mdepth(sss));
+            
+            sur_val(int,1) = mdata(sss(sur));
+            bot_val(int,1) = mdata(sss(bot));
+            plot_date(int,1) = udate(i);
+            if sur_val < 100
+                
+                fprintf(fid,'%s,%4.4f,%4.4f\n',datestr(mdate(sss(1)),'dd/mm/yyyy HH:MM'),...
+                    sur_val,bot_val);
+            end
+            
+            int = int + 1;
+        end
+    end
+    fclose(fid);
+    
+    figure
+    
+    plot(plot_date,sur_val,'o','markerfacecolor',
+    
+    
+    
+end
+
+

@@ -233,7 +233,7 @@ HSI = HSI_salt.*HSI_depth.*HSI_dist.*HSI_veg;
 figure % HSI
 
 axes('position',[0 0 1 1]);
-mapshow('GIS/Background.png');hold on
+mapshow('GIS/Background_All.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI,'s','filled');
 
@@ -258,7 +258,7 @@ saveas(gcf,[outdir,'HSI.png']);close all;
 figure % HSI_salt
 
 axes('position',[0 0 1 1]);
-mapshow('GIS/Background.png');hold on
+mapshow('GIS/Background_All.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_salt,'s','filled');
 
@@ -280,7 +280,7 @@ saveas(gcf,[outdir,'HSI_salt.png']);close all;
 figure %HSI_depth
 
 axes('position',[0 0 1 1]);
-mapshow('GIS/Background.png');hold on
+mapshow('GIS/Background_All.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_depth,'s','filled');
 
@@ -303,7 +303,7 @@ saveas(gcf,[outdir,'HSI_depth.png']);close all;
 figure %HSI_dist
 
 axes('position',[0 0 1 1]);
-mapshow('GIS/Background.png');hold on
+mapshow('GIS/Background_All.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_dist,'s','filled');
 
@@ -325,7 +325,7 @@ saveas(gcf,[outdir,'HSI_dist.png']);close all;
 figure %HSI_veg
 
 axes('position',[0 0 1 1]);
-mapshow('GIS/Background.png');hold on
+mapshow('GIS/Background_All.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_veg,'s','filled');
 
