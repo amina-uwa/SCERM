@@ -77,7 +77,7 @@ for j = 1:length(sites)
             sur_val(int,1) = mdata(sss(sur));
             bot_val(int,1) = mdata(sss(bot));
             plot_date(int,1) = udate(i);
-            if sur_val < 100
+            if sur_val(int,1) < 100
                 
                 fprintf(fid,'%s,%4.4f,%4.4f\n',datestr(mdate(sss(1)),'dd/mm/yyyy HH:MM'),...
                     sur_val(int,1),bot_val(int,1));

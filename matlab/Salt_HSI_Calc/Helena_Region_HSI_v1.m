@@ -29,24 +29,24 @@ domain = shaperead('GIS/Domain.shp');
 tic
  data = load(filename);
  toc
-% switch theyear
+switch theyear
 %     case 2015
 %         data = load([matfile_dir,'Matfiles/',num2str(theyear-1),'/SAL.mat']);
 % 
 %     case 2008
 %         data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
-% 
-%     case 2050
-%         data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
-% 
-%         dvec = datevec(data.savedata.Time);
-%         dvec(:,1) = 2010;
-%         data.savedata.Time = datenum(dvec);
-% 
-%         level = level + 0.2;
-% 
-%     otherwise
-% end
+
+    case 2050
+      %  data = load([matfile_dir,'Matfiles/',num2str(theyear),'/SAL.mat']);
+
+        dvec = datevec(data.savedata.Time);
+        dvec(:,1) = 2010;
+        data.savedata.Time = datenum(dvec);
+
+        level = level + 0.2;
+
+    otherwise
+end
 
 outdir = ['F:\Cloudstor\Shared\Aquatic Ecodynamics (AED)\AED_Swan_BB\SALT_HSI_v2\Helena\',datestr(the_daterange(1),'yyyy-mm-dd'),'_',datestr(the_daterange(end),'yyyy-mm-dd'),'/'];
 
