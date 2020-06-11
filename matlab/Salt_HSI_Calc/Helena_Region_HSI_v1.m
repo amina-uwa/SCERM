@@ -59,7 +59,7 @@ end
 
 if theyear == 2050
 
-    the_daterange = [datenum(2010,02,01) datenum(2010,03,01)];
+    the_daterange = [datenum(2010,04,01) datenum(2010,05,01)];
 
 end
 
@@ -108,12 +108,19 @@ end
 
 
 Sc = Sc_raw(pt_id);
-
+if theyear == 2050
+    Sc = Sc * 1.25;
+end
 
 Scrit = 10;
 Smax = 25;
 
 H90 = 0.33;
+
+if theyear == 2050
+H90 = 0.55;
+end
+
 ZrZ = 1.5;
 Hrz = H90 + ZrZ;
 %Hrz = 1; %
@@ -226,7 +233,32 @@ for i = 1:length(Hc)
 
 end
 
-HSI = HSI_salt.*HSI_depth.*HSI_dist.*HSI_veg;
+HSI_T = HSI_salt.*HSI_depth.*HSI_dist.*HSI_veg;
+
+HSI = min(HSI_T/0.75,1);
+
+
+outfile = ['savedata_',num2str(theyear),'.mat'];
+
+save(outfile,'HSI','-mat');
+
+% hsi_search = find(HSI >= 0.2);
+% hsi_grey = find(HSI < 0.2);
+
+newmap = jet();       %change as desired, e.g., flag(256)
+minz = 0;
+maxz = 1;
+
+ncol = size(newmap, 1);
+%zratio = (minz) ./ (maxz - minz);
+
+X1 = interp1([1 ncol],[minz maxz],[1:1:ncol]);
+
+pols = find(X1 <= 0.2);
+
+for i = 1:length(pols)
+    newmap(pols(i),:) = [0.6 0.6 0.6];   %set there to white
+end
 
 %HSI = min([HSI_salt,HSI_depth,HSI_dist,HSI_veg],[],2);
 
@@ -235,18 +267,24 @@ figure % HSI
 axes('position',[0 0 1 1]);
 mapshow('GIS/Background.png');hold on
 
-scatter(pnt(:,1),pnt(:,2),2,HSI,'s','filled');
+scatter(pnt(:,1),pnt(:,2),2,HSI(:),'s','filled');
+%scatter(pnt(hsi_grey,1),pnt(hsi_grey,2),2,'filled','markerfacecolor',[0.6 0.6 0.6],'markeredgecolor','none');
+caxis([0 1]);
 
-caxis([0 0.75]);
+colormap(newmap);
 
 axis off
 
-cb = colorbar('southoutside');
-title(cb,'HSI');
+cb = colorbar('southoutside','position',[0.1 0.06 0.8 0.05]);
+% pos = get(cb,'position');
+% pos
+% stop
+
+title(cb,'$HSR$','Interpreter','latex');
 
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
-xSize = 20;
+xSize = 21;
 ySize = 21;
 xLeft = (21-xSize)/2;
 yTop = (30-ySize)/2;
@@ -262,14 +300,17 @@ mapshow('GIS/Background.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_salt,'s','filled');
 
+colormap default;
+
+
 axis off
 
-cb = colorbar('southoutside');
+cb = colorbar('southoutside','position',[0.1 0.06 0.8 0.05]);
 title(cb,'HSI salt');
 
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
-xSize = 20;
+xSize = 21;
 ySize = 21;
 xLeft = (21-xSize)/2;
 yTop = (30-ySize)/2;
@@ -283,15 +324,16 @@ axes('position',[0 0 1 1]);
 mapshow('GIS/Background.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_depth,'s','filled');
+colormap default;
 
 axis off
 
-cb = colorbar('southoutside');
+cb = colorbar('southoutside','position',[0.1 0.06 0.8 0.05]);
 title(cb,'HSI depth');
 
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
-xSize = 20;
+xSize = 21;
 ySize = 21;
 xLeft = (21-xSize)/2;
 yTop = (30-ySize)/2;
@@ -306,15 +348,16 @@ axes('position',[0 0 1 1]);
 mapshow('GIS/Background.png');hold on
 
 scatter(pnt(:,1),pnt(:,2),2,HSI_dist,'s','filled');
+colormap default;
 
 axis off
 
-cb = colorbar('southoutside');
+cb = colorbar('southoutside','position',[0.1 0.06 0.8 0.05]);
 title(cb,'HSI dist');
 
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
-xSize = 20;
+xSize = 21;
 ySize = 21;
 xLeft = (21-xSize)/2;
 yTop = (30-ySize)/2;
@@ -331,12 +374,12 @@ scatter(pnt(:,1),pnt(:,2),2,HSI_veg,'s','filled');
 
 axis off
 
-cb = colorbar('southoutside');
+cb = colorbar('southoutside','position',[0.1 0.06 0.8 0.05]);
 title(cb,'HSI veg');
 
 set(gcf, 'PaperPositionMode', 'manual');
 set(gcf, 'PaperUnits', 'centimeters');
-xSize = 20;
+xSize = 21;
 ySize = 21;
 xLeft = (21-xSize)/2;
 yTop = (30-ySize)/2;
