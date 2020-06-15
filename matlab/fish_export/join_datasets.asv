@@ -1,0 +1,19 @@
+clear all; close all;
+
+dirname = 'Test_output/';
+
+filelist = dir([dirname,'*.csv']);
+
+outfile = 'BLA_2015_2019_SAL_TEMP_OXY_DRAFT_v0.1.csv';
+
+fid = fopen(outfile,'wt');
+
+for i = 1:length(filelist)
+    
+    fidread = fopen([dirname,filelist(i).name],'rt');
+    
+    fline = fgetl(fidread);
+    
+    if i == 1
+        fprintf(fid,'%s\n',fline
+    
