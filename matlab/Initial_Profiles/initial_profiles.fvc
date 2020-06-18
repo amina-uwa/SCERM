@@ -1,0 +1,115 @@
+bc == CP,406263.0000,6474166.0000,../BCs/Profiles/initial_profile_s6161086.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,401768.0000,6468783.0000,../BCs/Profiles/initial_profile_s6161821.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,401585.0000,6470349.0000,../BCs/Profiles/initial_profile_s6161879.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,396239.0000,6455988.0000,../BCs/Profiles/initial_profile_s6161837.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,393509.0000,6455593.0000,../BCs/Profiles/initial_profile_s6161838.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,404687.3000,6472636.0000,../BCs/Profiles/initial_profile_s6160118.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,405311.6900,6473712.4000,../BCs/Profiles/initial_profile_s6160119.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,385172.0000,6457020.0000,../BCs/Profiles/initial_profile_s6160258.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,387504.0000,6458161.0000,../BCs/Profiles/initial_profile_s6160259.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,391215.0000,6463014.0000,../BCs/Profiles/initial_profile_s6160262.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,394660.0000,6464027.0000,../BCs/Profiles/initial_profile_s6160263.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,396801.0000,6465716.0000,../BCs/Profiles/initial_profile_s6160764.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,403502.0400,6471562.9900,../BCs/Profiles/initial_profile_s6160930.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,404439.0000,6471549.0000,../BCs/Profiles/initial_profile_s6161854.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,389983.0000,6459538.0000,../BCs/Profiles/initial_profile_s6161869.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,397308.0000,6464439.0000,../BCs/Profiles/initial_profile_s6161870.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,399802.0000,6467786.0000,../BCs/Profiles/initial_profile_s6161878.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,401966.0000,6469695.0000,../BCs/Profiles/initial_profile_s6162045.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,401818.0000,6470125.0000,../BCs/Profiles/initial_profile_s6162300.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,400826.0000,6467654.0000,../BCs/Profiles/initial_profile_s6163485.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,404979.2100,6475052.5800,../BCs/Profiles/initial_profile_s6163500.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,405656.1300,6474493.4500,../BCs/Profiles/initial_profile_s6163833.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
+bc == CP,402723.2800,6470809.1600,../BCs/Profiles/initial_profile_s6167114.csv
+bc header ==  Depth,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA
+bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.1,1,0.3,0.5,0.9,0.1,0.2,0.5,0.625,0.417,0.417,0.625,2.083,0.00754717
+end bc
+
