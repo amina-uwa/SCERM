@@ -4,7 +4,7 @@ dirname = 'Test_output/';
 
 filelist = dir([dirname,'*.csv']);
 
-outfile = 'BLA_2015_2019_SAL_TEMP_OXY_DRAFT_v0.1.csv';
+outfile = 'BLA_2015_2019_DRAFT_v0.2.csv';
 
 fid = fopen(outfile,'wt');
 
