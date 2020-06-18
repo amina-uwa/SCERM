@@ -124,7 +124,7 @@ initial water level == 1.23
 !restart file == swan.rst
 !use restart file time == 1
 
-include == include\include_profiles_all.fvc
+include == include\include_profiles_2017_2018.fvc
 
 
 !BOUNDARY CONDITIONS

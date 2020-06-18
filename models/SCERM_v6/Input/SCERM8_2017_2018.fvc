@@ -121,7 +121,7 @@ initial water level == 1.23
 !INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20170315.csv
 
 
-include == include\include_profiles_all.fvc
+include == include\include_profiles_2017_2018.fvc
 
 
 !BOUNDARY CONDITIONS
