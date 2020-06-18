@@ -1,7 +1,7 @@
 !OUTPUT COMMANDS
 !_________________________________________________________________
 
-output dir == ..\Output\
+output dir == ..\..\Output\
 write restart dt == 120.
 
 !output == netcdf
