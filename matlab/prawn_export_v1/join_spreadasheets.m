@@ -1,10 +1,10 @@
 clear all; close all;
 
-maindir = 'Prawn_v16/New_Template_v6/';
+maindir = 'Prawn_v17/New_Template_v6/';
 
 filelist = dir([maindir,'*.csv']);
 
-fid = fopen('Swan_Export_SCERM8_draft_v0.2.csv','wt');
+fid = fopen('Swan_Export_SCERM8_draft_v0.3.csv','wt');
 
 fidchx = fopen([maindir,filelist(1).name],'rt');
 

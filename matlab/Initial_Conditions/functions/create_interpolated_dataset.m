@@ -19,14 +19,18 @@ if isfield(data.(site),varname)
         switch depth
             case 'Bottom'
                 [~,ind] = min(t_depth(sss));
+                t_data(iii) = tt_data(sss(ind));
             case 'Surface'
                 [~,ind] = max(t_depth(sss));
+                t_data(iii) = tt_data(sss(ind));
+            case 'Mean'
+                t_data(iii) = mean(tt_data(sss));
             otherwise
                 disp('Not a valid depth name');
         end
         
-        t_data(iii) = tt_data(sss(ind));
-        t_date(iii) = data.(site).(varname).Date(sss(ind));
+        
+        t_date(iii) = data.(site).(varname).Date(sss(1));
     end
     
     ss = find(~isnan(t_data) == 1);

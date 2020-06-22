@@ -62,7 +62,7 @@ vars = {...
 for ccc = 3:length(modlist)
     
     maindir = ['E:\SCERM_Proc_Region_v2/',modlist(ccc).name,'/'];
-    outdir = 'Prawn_v16/New_Template_v6/';
+    outdir = 'Prawn_v17/New_Template_v6/';
     
     
     disp(maindir);
@@ -80,7 +80,7 @@ for ccc = 3:length(modlist)
     
     fid = fopen([outdir,modlist(ccc).name,'.csv'],'wt');
     
-    headers_str = ['Site Code,Project,Name,Region,Type,Region,Year,mm,dd,ID,area,num_cells,num_outputs,'];
+    headers_str = ['Site Code,Full Name,Name,Region,Type,Period,Year,mm,dd,ID,area,num_cells,num_outputs,'];
     
     fprintf(fid,'%s',headers_str);
     
@@ -118,8 +118,11 @@ for ccc = 3:length(modlist)
             
             line_chx = line_chx + 1;
             
-            fprintf(fid,'%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,',shp(i).Code,shp(i).Project,regexprep(shp(i).Name,',',' '),...
-                shp(i).Type,shp(i).Type,shp(i).Type,...
+            %headers_str = ['Site Code,Full Name,Name,Region,Type,Period,Year,mm,dd,ID,area,num_cells,num_outputs,'];
+
+            
+            fprintf(fid,'%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,',shp(i).Code,regexprep(shp(i).Name,',',' '),regexprep(shp(i).NewName,',',' '),...
+                shp(i).Region{k},shp(i).Type,shp(i).Period{k},...
                 datestr(shp(i).Dates(k),'yyyy'),...
                 datestr(shp(i).Dates(k),'mm'),...
                 datestr(shp(i).Dates(k),'dd'),...

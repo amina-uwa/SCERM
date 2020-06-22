@@ -49,9 +49,19 @@ for i = 1:length(shp)
                 
                 sss = find(strcmpi(nNames,prawn(int).NewName) == 1);
                 
+                theperiod = [];
+                for bb = 1:length(sss)
+                    if isnumeric(nPeriod{sss(bb)})
+                        theperiod{bb} = num2str(nPeriod{sss(bb)});
+                    else
+                        theperiod{bb} = nPeriod{sss(bb)};
+                    end
+                end
+                
+                
                 prawn(int).Dates = [];
                 prawn(int).Dates = nDates(sss);
-                prawn(int).Period = nPeriod(sss);
+                prawn(int).Period = theperiod';%nPeriod(sss);
                 prawn(int).Region = nRegion(sss);
                 prawn(int).Depth = 1.5;
                 int = int + 1;
@@ -67,9 +77,20 @@ for i = 1:length(shp)
                 
                 sss = find(strcmpi(oNames,prawn(int).NewName) == 1);
                 
+                theperiod = [];
+                for bb = 1:length(sss)
+                    if isnumeric(oPeriod{sss(bb)})
+                        theperiod{bb} = num2str(oPeriod{sss(bb)});
+                    else
+                        theperiod{bb} = oPeriod{sss(bb)};
+                    end
+                end
+                
+                
+                
                 prawn(int).Dates = [];
                 prawn(int).Dates = oDates(sss);
-                prawn(int).Period = oPeriod(sss);
+                prawn(int).Period = theperiod';%oPeriod(sss);
                 prawn(int).Region = oRegion(sss);
                 prawn(int).Depth = 20;
                 int = int + 1;
@@ -80,51 +101,51 @@ for i = 1:length(shp)
         
     end
 end
-                
-save ../prawn_export.mat prawn -mat;                
-                
-                
-                
-                
-                
-                
-                
-                
-                % fid = fopen('existing.csv','wt');
-                % for i = 1:length(shp)
-                %     fprintf(fid,'%s,%s,%s\n',regexprep(shp(i).Name,',','_'),shp(i).Type,shp(i).Project);
-                % end
-                % fclose(fid);
-                
-                % [~,sstr] = xlsread('Nearshore prawns.xlsx','B2:B1000');
-                %
-                % near = unique(sstr);
-                %
-                % [~,sstr] = xlsread('Offshore prawns.xlsx','B2:B1000');
-                %
-                % off = unique(sstr);
-                %
-                % fid = fopen('existing.csv','wt');
-                % for i = 1:length(shp)
-                %     fprintf(fid,'%s,%s,%s\n',regexprep(shp(i).Name,',','_'),shp(i).Type,shp(i).Project);
-                % end
-                %
-                % fprintf(fid,'Nearshore\n');
-                % for i = 1:length(near)
-                %     fprintf(fid,'%s\n',near{i});
-                % end
-                % fprintf(fid,'Offshore\n');
-                % for i = 1:length(off)
-                %     fprintf(fid,'%s\n',off{i});
-                % end
-                %
-                % fclose(fid);
-                % int = 1;
-                % for i = 1:length(shp)
-                %     if strcmpi(shp(i).Project,'Prawns') == 1
-                %         prawns(int) = shp(i);
-                %         int = int + 1;
-                %     end
-                % end
-                
-                
+
+save ../prawn_export.mat prawn -mat;
+
+
+
+
+
+
+
+
+% fid = fopen('existing.csv','wt');
+% for i = 1:length(shp)
+%     fprintf(fid,'%s,%s,%s\n',regexprep(shp(i).Name,',','_'),shp(i).Type,shp(i).Project);
+% end
+% fclose(fid);
+
+% [~,sstr] = xlsread('Nearshore prawns.xlsx','B2:B1000');
+%
+% near = unique(sstr);
+%
+% [~,sstr] = xlsread('Offshore prawns.xlsx','B2:B1000');
+%
+% off = unique(sstr);
+%
+% fid = fopen('existing.csv','wt');
+% for i = 1:length(shp)
+%     fprintf(fid,'%s,%s,%s\n',regexprep(shp(i).Name,',','_'),shp(i).Type,shp(i).Project);
+% end
+%
+% fprintf(fid,'Nearshore\n');
+% for i = 1:length(near)
+%     fprintf(fid,'%s\n',near{i});
+% end
+% fprintf(fid,'Offshore\n');
+% for i = 1:length(off)
+%     fprintf(fid,'%s\n',off{i});
+% end
+%
+% fclose(fid);
+% int = 1;
+% for i = 1:length(shp)
+%     if strcmpi(shp(i).Project,'Prawns') == 1
+%         prawns(int) = shp(i);
+%         int = int + 1;
+%     end
+% end
+
+

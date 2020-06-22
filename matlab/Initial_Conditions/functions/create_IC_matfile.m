@@ -70,7 +70,7 @@ for i = 1:length(sites)
     
     
     
-    Sal = create_interpolated_dataset(fdata,varname,sites{i},'Surface',datearray);
+    Sal = create_interpolated_dataset(fdata,varname,sites{i},'Mean',datearray);
     
     ss = find(Sal > 1000);
     Sal(ss) = 23;

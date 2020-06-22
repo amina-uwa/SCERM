@@ -2,8 +2,8 @@ clear all; close all;
 
 addpath(genpath('functions'));
 
-sdatearray = datenum(2007:01:2018,03,15);
-%sdatearray = datenum(2018,03,15);
+%sdatearray = datenum(2007:01:2018,03,15);
+sdatearray = datenum(2017,03,15);
 % Rsdatearray = datenum(2017,11,01);
 for bdb = 1:length(sdatearray)
     

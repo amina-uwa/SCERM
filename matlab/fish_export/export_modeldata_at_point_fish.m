@@ -49,7 +49,7 @@ depth_array = [0:-0.25:-20];
 
 
 for kk = 1:length(sites)
-    outdir = ['Raw_Files/',sites(kk).Name,'/'];
+    outdir = ['Raw_Files_2/',sites(kk).Name,'/'];
     
     mkdir(outdir);
     
@@ -114,20 +114,35 @@ for kk = 1:length(sites)
             thedepths = data.(mvar).savedata.layerface_Z(spoint:spoint + NL-1,j);
             thedepths = thedepths - thedepths(1);
             
-            for k = 1:length(depth_array)
-                [~,ind] = min(abs(thedepths - depth_array(k)));
-                
-                if depth_array(k) > min(thedepths)
-                    fprintf(fid,'%s,',datestr(data.(mvar).savedata.Time(j),'dd-mm-yyyy HH:MM:SS'));
-                    fprintf(fid,'%2.2f,',depth_array(k));
-                    for bb = 1:length(vars)
-                        fprintf(fid,'%4.4f,',data.(mvar).savedata.(vars{bb})(ind,j));
-                    end
-                    fprintf(fid,'\n');
-                    
+            the = find(depth_array >= min(thedepths));
+            
+            
+            
+            for k = 1:length(the)
+                fprintf(fid,'%s,',datestr(data.(mvar).savedata.Time(j),'dd-mm-yyyy HH:MM:SS'));
+                fprintf(fid,'%2.2f,',depth_array(the(k)));
+                for bb = 1:length(vars)
+                    thevals = interp1(thedepths,data.(mvar).savedata.(vars{bb})(:,j),depth_array(the));
+                    fprintf(fid,'%4.4f,',thevals(k));%data.(mvar).savedata.(vars{bb})(k,j));
                 end
-                
+                fprintf(fid,'\n');
             end
+            
+            
+            %             for k = 1:length(depth_array)
+            %                 [~,ind] = min(abs(thedepths - depth_array(k)));
+            %
+            %                 if depth_array(k) > min(thedepths)
+            %                     fprintf(fid,'%s,',datestr(data.(mvar).savedata.Time(j),'dd-mm-yyyy HH:MM:SS'));
+            %                     fprintf(fid,'%2.2f,',depth_array(k));
+            %                     for bb = 1:length(vars)
+            %                         fprintf(fid,'%4.4f,',data.(mvar).savedata.(vars{bb})(ind,j));
+            %                     end
+            %                     fprintf(fid,'\n');
+            %
+            %                 end
+            %
+            %             end
         end
         
         fclose(fid);
