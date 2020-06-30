@@ -83,34 +83,33 @@
               'aed2_tracer',
               'aed2_noncohesive',
               'aed2_oxygen',
-              !'aed2_carbon',
+             !'aed2_carbon',
               'aed2_silica',
               'aed2_nitrogen',
               'aed2_phosphorus',
               'aed2_organic_matter',
               'aed2_phytoplankton',
-	          'aed2_totals'
+	            'aed2_totals'
 /
 !###############################################################################
 ! aed2_sedflux
 !-------------------------------------------------------------------------------
 &aed2_sedflux
-   sedflux_model = 'Constant2D'  ! Refer to ../Geo/Zones.PNG
+   sedflux_model = 'Constant2D'    ! Refer to ../Geo/Material Zones v4 Seagrass.png
 /
 &aed2_sed_const2d
-   n_zones  = 10
-   Fsed_oxy = -40.0,-80.0,-50.0,-35.0,-50.0,-35.0,-20,-20.0,-10.0,0.0
-   Fsed_rsi = -1e10,-1e10,-1e10
-   Fsed_amm = -1e10,-1e10,-1e10
-   Fsed_nit = -1e10,-1e10,-1e10
-   Fsed_frp = 0.2,0.25,0.2,0.2,0.2,0.2,0.05,0.05,0.02,0.1
+   n_zones  = 19 !1s->   2      3      4      5      6      7      8      9    10c->   11     12     13    14b->   15     16     17     18     19
+   Fsed_oxy = -40.0, -80.0, -50.0, -35.0, -50.0, -35.0, -20.0, -20.0, -15.0, -40.0, -30.0, -30.0, -25.0, -20.0, -20.0, -15.0, -15.0, -15.0, -10.0
+   Fsed_rsi =   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   2.0,   2.0,   2.0,   1.0,   3.0
+   Fsed_frp =   0.2,  0.25,   0.2,   0.2,   0.2,   0.2,  0.05,  0.05,  0.02,   0.2,   0.2,   0.2,   0.2,   0.2,   0.1,   0.1,   0.1,  0.05,   0.1
+   Fsed_amm =   3.0,   3.0,   3.0,   3.0,   3.0,   3.5,   3.0,   2.0,   2.0,   3.0,   3.0,   2.0,   1.0,   1.0,   1.0,   0.6,   0.5,   0.2,   0.5
+   Fsed_nit =   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   0.0,   3.0
+   Fsed_doc =   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   0.0,   3.0
+   Fsed_don =   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   0.0,   3.0
+   Fsed_dop =   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   3.0,   0.0,   3.0
    Fsed_pon = -1e10,-1e10,-1e10
-   Fsed_don = -1e10,-1e10,-1e10
    Fsed_pop = -1e10,-1e10,-1e10
-   Fsed_dop = -1e10,-1e10,-1e10
    Fsed_poc = -1e10,-1e10,-1e10
-   Fsed_doc = -1e10,-1e10,-1e10
-   Fsed_dic = -1e10,-1e10,-1e10
 /
 !###############################################################################
 ! MAC: aed2_macrophyte
@@ -129,7 +128,7 @@
    num_mphy         = 1
    the_mphy         = 2
    n_zones          = 1
-   active_zones     = 10             ! Refer to ../Geo/Zones.PNG
+   active_zones     = 19             ! Refer to ../Geo/Zones.PNG
    simStaticBiomass = .true.
    simMacFeedback   = .true.
    dbase            = '../External/AED2/aed2_macrophyte_pars.nml'
@@ -190,7 +189,7 @@
    Fsed_oxy          = -50.0
    Ksed_oxy          = 100.0
    theta_sed_oxy     =   1.08
-   Fsed_oxy_variable = 'SDF_Fsed_oxy'   ! Link to SDF 10 zones
+   Fsed_oxy_variable = 'SDF_Fsed_oxy'   ! Link to SDF 19 zones
 /
 !###############################################################################
 ! CAR: aed2_carbon - AED carbon model
@@ -238,7 +237,7 @@
    Ksed_rsi = 50.0
    theta_sed_rsi = 1.08
    silica_reactant_variable = 'OXY_oxy'
-  !Fsed_rsi_variable = 'SDF_Fsed_rsi'
+   Fsed_rsi_variable = 'SDF_Fsed_rsi'
 /
 !###############################################################################
 ! NIT: aed2_nitrogen - AED nitrogen model
@@ -288,9 +287,14 @@
    Ksed_n2o = 100.0
    theta_sed_amm = 1.08
    theta_sed_nit = 1.08
-  !Fsed_amm_variable = 'SDF_Fsed_amm'
-  !Fsed_nit_variable = 'SDF_Fsed_nit'
+   Fsed_amm_variable = 'SDF_Fsed_amm'
+   Fsed_nit_variable = 'SDF_Fsed_nit'
   !Fsed_n2o_variable = 'SDF_Fsed_n2o'
+  !-- Atmospheric deposition
+    simDryDeposition = .false.
+    atm_din_dd       = 0.05
+    simWetDeposition = .true.
+    atm_din_conc     = 10.0
 /
 !###############################################################################
 ! PHS: aed2_phosphorus - AED phosphorus model
@@ -310,11 +314,16 @@
    ads_use_external_tss = .false.
    po4sorption_target_variable ='NCS_ss1'
    PO4AdsorptionModel = 1
-   Kpo4p = 0.1
+   Kpo4p = 0.01
    ads_use_pH = .false.
    Kadsratio= 1.0
    Qmax = 1.0
    w_po4ads = -9999     ! Note: -9999 links PO4-ad settling to target_variable
+   !-- Atmospheric deposition
+    simDryDeposition = .false.
+    atm_pip_dd = 0.00
+    simWetDeposition = .true.
+    atm_frp_conc = 0.01
 /
 !###############################################################################
 ! OGM: aed2_organic_matter - AED organic matter model
@@ -336,6 +345,7 @@
      dopr_initial =   3.0
      cpom_initial = 100.0
    !-- Breakdown and mineralisation (basic pool)
+     Rdom_minerl  =   0.035
      Rpoc_hydrol  =   0.05
      Rdoc_minerl  =   0.001
      Rpon_hydrol  =   0.05
@@ -383,7 +393,7 @@
      photo_c       = 0.75
 
     !-- Particle settling parameters
-     settling     =  3
+     settling     =  1
      w_pom        = -0.06
      d_pom        =  1e-5
      rho_pom      = 1.2e3
@@ -403,9 +413,9 @@
      Fsed_dop = 0.0
      Ksed_dom = 4.5
      theta_sed_dom = 1.08
-     !Fsed_doc_variable = 'SDF_Fsed_doc'
-     !Fsed_don_variable = 'SDF_Fsed_don'
-     !Fsed_dop_variable = 'SDF_Fsed_dop'
+     Fsed_doc_variable = 'SDF_Fsed_doc'
+     Fsed_don_variable = 'SDF_Fsed_don'
+     Fsed_dop_variable = 'SDF_Fsed_dop'
 
      !-- Other options
       extra_diag = .false. !.true.
@@ -424,14 +434,14 @@
      settling     =   1,1,1,1,4
    !-- Benthic phytoplankton group (microphytobenthos)
      do_mpb       =   1
-     R_mpbg       =   0.5 
-     R_mpbr       =   0.05 
+     R_mpbg       =   0.5
+     R_mpbr       =   0.05
      I_Kmpb       = 100.00
-     mpb_max      =   1000.00
+     mpb_max      =1000.00
 	 resuspension =   0.45, 0.45, 0.45, 0.45, 0.45,0.45, 0.45,0.45
      resus_link   =  'NCS_resus'
-     n_zones      =   8
-     active_zones =   3,4,5,6,7,8,9,10
+     n_zones      =   17
+     active_zones =   3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,18,19
    !-- Set link variables to other modules
      p_excretion_target_variable ='OGM_dop'
      n_excretion_target_variable ='OGM_don'
