@@ -115,19 +115,14 @@ Ntracer == 1
 ! INITIAL CONDITIONS
 !_________________________________________________________________
 
-initial water level == 1.23
+INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20170315.csv
 
-
-!INITIAL CONDITION 2D == ..\BCs\Initial\IC_AED2_20170315.csv
-
-
-include == include\include_profiles_2017_2018.fvc
 
 
 !BOUNDARY CONDITIONS
 ! Met______________________________________________________________
 
-bc == W10, ..\BCs\Met\South_Perth_2007_2020_Median_Cloud_Cover.csv
+bc == W10, ..\BCs\Met\South_Perth_2007_2020_Median_Cloud_Cover_Max_Wind.csv
   bc header == ISOTime,Wx,Wy
   bc scale  == 1.1,1.1
 end bc
