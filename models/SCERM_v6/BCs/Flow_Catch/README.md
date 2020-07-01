@@ -1,3 +1,5 @@
+Table 1 Variables input into SCERM from either observed daily data (obs), the catchment model (catch) or as a function of catchment model inputs and observed data.
+
 |Required Variable			|Unit			|Conversion								|
 |---------------------------|---------------|---------------------------------------|
 |Flowcatch					|m3 s-1 		|	Input from catchment model          |
@@ -21,6 +23,7 @@
 
 
 
+Table 2 Variables Breakdown from BC file into TFV.
 
 
 |Required TFV Variable|	Processed Catchment Variable|	Conversion Factor|
