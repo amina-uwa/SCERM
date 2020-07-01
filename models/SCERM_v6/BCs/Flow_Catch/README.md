@@ -1,3 +1,28 @@
+|Required Variable			|Unit			|Conversion								|
+|---------------------------|---------------|---------------------------------------|
+|Flowcatch					|m3 s-1 		|	Input from catchment model          |
+|Salinity					|PSU			|	Observed data                       |
+|Temperature				|	°C			|	Observed data                       |
+|TSS						|	mg L-1		|	Observed data                       |
+|Oxygen						|mmol m-3		|Observed data                          |
+|Silica						|mmol m-3		|Observed data                          |
+|Particulate organic P (POP)|	mmol m-3	|	Observed data                       |
+|Total Chl-a (TCHLA)		|	ug L-1		|	Observed data                       |
+|NH4+						|mmol m-3		|TNcatch × (NH4+obs / TNobs)            |
+|NO3-						|mmol m-3		|TNcatch × (NO3-obs / TNobs)            |
+|Dissolved organic N (DON)	|mmol m-3		|TNcatch × (DONobs / TNobs)             |
+|Particulate organic N (PON)|	mmol m-3	|	TNcatch × (PONobs / TNobs)          |
+|TNcatch					|	mmol m-3	|	Input from catchment model          |
+|PO43-						|mmol m-3		|TPcatch × (PO43-obs / TPobs)           |
+|Organic P (OP)				|mmol m-3		|TPcatch - (PO43-) – (PO43- * 0.1)|
+|TPcatch					|	mmol m-3	|	Input from catchment model          |
+|Dissolved organic C (DOC)	|mmol m-3		|Observed data                          |
+|Particulate organic C (POC)|	mmol m-3	|	Observed data                       |
+
+
+
+
+
 |Required TFV Variable|	Processed Catchment Variable|	Conversion Factor|
 |---------------------|-----------------------------|------------------|
 |Flow |	Flowcatch |	1|
