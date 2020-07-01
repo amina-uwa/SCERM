@@ -142,9 +142,16 @@ for i = 1:length(shp)
                 case 'FRP'
                     theconv = inflow.(theBC).FRP(index_bc) / TP;
                     pvar = data.(thesite).TP.Data(index_cat) * theconv;
+                    
+                    theFRP = pvar;
+                    
                 case 'OP'
                     theconv = inflow.(theBC).FRP(index_bc) * 2;
-                    pvar = data.(thesite).TP.Data(index_cat) - theconv;
+                    %pvar = data.(thesite).TP.Data(index_cat) - theconv;
+                    
+                    pvar = data.(thesite).TP.Data(index_cat) - theFRP - (theFRP*0.1);
+                     clear theFRP;
+                    
                 case 'TN'
                     %theconv = inflow.(theBC).FRP(index_bc) * 2;
                     pvar = data.(thesite).TN.Data(index_cat);
