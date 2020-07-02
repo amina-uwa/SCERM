@@ -8,7 +8,7 @@ inflowfile = dir(['../Inflows/BCs/Flow/','*.csv']);
 
 load('data.mat');
 
-outdir = 'Flow_Catch_5/';
+outdir = 'Flow_Catch_6/';
 
 if ~exist(outdir,'dir')
     mkdir(outdir);
