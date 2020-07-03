@@ -482,7 +482,7 @@
 &aed2_totals
    outputLight  = .true.
    TN_vars      =  'NIT_nit','NIT_amm','OGM_don','OGM_pon','OGM_donr','OGM_cpom','PHY_grn','PHY_bga','PHY_dino','PHY_crypt','PHY_diatom'
-   TN_varscale  =   1.0,      1.0,      1.0,       1.0,     1.0,       ,0.005     ,0.15     ,0.15     ,0.15       ,0.15       ,0.15
+   TN_varscale  =   1.0,      1.0,      1.0,       1.0,     1.0,       0.005     ,0.15     ,0.15     ,0.15       ,0.15       ,0.15
    !TKN_vars     =  'NIT_amm','OGM_don','OGM_pon','OGM_donr','PHY_grn'
    !TKN_varscale =   1.0,      1.0,       1.0,     1.0,       0.15
    TP_vars =  'PHS_frp',

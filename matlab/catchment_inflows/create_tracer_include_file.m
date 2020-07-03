@@ -39,7 +39,11 @@ fprintf(fid,'bc == QC,%10.4f,%10.4f,%s\n',X,Y,filename);
       end
   end
   fprintf(fid,'\n');
-  
+  if strcmpi(shp(i).SubCat,'Upper Swan01 Outflow') == 1
+      fprintf(fid,'bc scale == 1\n');
+  else
+      fprintf(fid,'bc scale == 0.95\n');
+  end
   
 fprintf(fid,'end bc\n');
 
