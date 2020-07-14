@@ -211,8 +211,8 @@ disp(['Limit Region Q: ',num2str(min(the_load_region_Q)),' ',num2str(max(the_loa
 disp(['Limit Field Conc: ',num2str(min(the_field)),' ',num2str(max(the_field))]);
 
 
-
-
+whos
+stop
 
 % Plotting.......................................................
 
