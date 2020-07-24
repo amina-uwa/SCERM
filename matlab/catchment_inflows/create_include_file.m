@@ -3,9 +3,9 @@ clear all; close all;
 shp = shaperead('../../../Source_to_SCERM/Maps/InflowPoints.shp');
 
 
-fid = fopen('include_catchment_dry_44.fvc','wt');
+fid = fopen('include_catchment_wet_44.fvc','wt');
 
-outdir = 'Dry_44\';
+outdir = 'Wet_44\';
 
 tidename = '..\..\BCs\Tide_v2\Fremantle_Inflow_2019_ARMS_filtered.csv';
 
@@ -14,7 +14,7 @@ fprintf(fid,'! Fremantle________________________________________________________
 fprintf(fid,'bc == WL,1,%s\n',tidename);
   fprintf(fid,'bc header ==  ISOTime,wl,Sal,Temp,zeroes,zeroes,TSS,TSS,Oxy,Sil,Amm,Nit,FRP,FRP,DOC_T,POC_T,DON_T,PON_T,OP,OP,DOC_T,DON_T,OP,POC_T,CHLA,CHLA,CHLA,CHLA,CHLA,CHLA\n');
   fprintf(fid,'bc scale == 1,1,1,1,1,0.3,0.7,1,1,1,1,1,0.1,0.1,0.5,0.3,1,0.3,0.5,0.9,0.7,0.2,0.5,0.167,0.125,0.333,2.292,1.25,0.00754717\n');
-  fprintf(fid,'bc offset == 0,0,0.5\n');
+  fprintf(fid,'bc offset == 0.2,0,0.5\n');
   fprintf(fid,'end bc');
 
 fprintf(fid,'\n');
