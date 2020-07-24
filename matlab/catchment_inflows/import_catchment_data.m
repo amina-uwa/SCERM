@@ -2,7 +2,7 @@ clear all; close all;
 
 addpath(genpath('tuflowfv'));
 
-fid = fopen('..\..\..\Source_to_SCERM\SourceOutputs\TargetsScenarios - Wet.res.csv','rt');
+fid = fopen('..\..\..\Source_to_SCERM\SourceOutputs\TargetsScenarios - Targets.res.csv','rt');
 
 
 isdata = 0;
