@@ -68,7 +68,7 @@ depth_array = [0:-0.25:-20];
 
 
 for kk = 1:length(sites)
-    outdir = ['Test_v1/',sites(kk).Name,'/'];
+    outdir = ['Test_v2/',sites(kk).Name,'/'];
     
     mkdir(outdir);
     

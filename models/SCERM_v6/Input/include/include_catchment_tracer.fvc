@@ -3,9 +3,21 @@
 bc == WL,1,..\BCs\Tide_v2\Fremantle_Inflow_2019_ARMS_filtered.csv
 bc header ==  ISOTime,wl,Sal,Temp,TN,TP
 end bc
+! Main Inflows___________________________________________________________
+
+bc == QC,407414.3836,6483340.2804,..\BCs\Flow_Catch\Upper Swan01 Outflow.csv
+bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes
+bc scale == 1
+end bc
+
+
+bc == QC,398068.0748,6456658.7079,..\BCs\Flow_Catch\Lower Canning Outflow.csv
+bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP
+bc scale == 0.95
+end bc
+
 
 ! Catchment___________________________________________________________
-
 
 bc == QC,391724.5369,6458914.8458,..\BCs\Flow_Catch\South Perth06 Outflow.csv
 bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
@@ -38,13 +50,13 @@ end bc
 
 
 bc == QC,391911.0244,6456347.4122,..\BCs\Flow_Catch\Bullcreek8-9 Outflow.csv
-bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
+bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
 bc scale == 0.95
 end bc
 
 
 bc == QC,393803.0636,6455465.5542,..\BCs\Flow_Catch\Bullcreek04 Outflow.csv
-bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
+bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
 bc scale == 0.95
 end bc
 
@@ -205,18 +217,6 @@ bc scale == 0.95
 end bc
 
 
-bc == QC,398068.0748,6456658.7079,..\BCs\Flow_Catch\Lower Canning Outflow.csv
-bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
-bc scale == 0.95
-end bc
-
-
-bc == QC,407414.3836,6483340.2804,..\BCs\Flow_Catch\Upper Swan01 Outflow.csv
-bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
-bc scale == 1
-end bc
-
-
 bc == QC,405830.0412,6480133.0190,..\BCs\Flow_Catch\Henley Brook Outflow.csv
 bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
 bc scale == 0.95
@@ -242,7 +242,7 @@ end bc
 
 
 bc == QC,405615.5699,6474540.2748,..\BCs\Flow_Catch\Jane Brook Outflow.csv
-bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
+bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
 bc scale == 0.95
 end bc
 
@@ -266,7 +266,7 @@ end bc
 
 
 bc == QC,392426.4236,6453993.1513,..\BCs\Flow_Catch\Bullcreek5-7 Outflow.csv
-bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
+bc header ==  ISOTime,Flow,Sal,Temp,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,TN,TP,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes,zeroes
 bc scale == 0.95
 end bc
 
