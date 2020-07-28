@@ -1,0 +1,40 @@
+clear all; close all;
+
+simlist = dir('Export/');
+
+vars = {...
+    'TN',...
+    'TP',...
+    'Oxy',...
+    'TCHLA',...
+    'Turbidity',...
+    'TEMP',...
+    'SAL',...
+    };
+
+
+for i = 3:length(simlist)
+    
+    for j = 1:12
+        
+        zone = ['Zone,',num2str(j)];
+        
+        filename = ['Export/',simlist(i).name,'/Zone',num2str(j),'.csv'];
+        
+        
+        [snum,sstr] = xlsread(filename,'A2:BE10000');
+        
+        mTime = datestr(sstr(:,1),'dd/mm/yyyy HH:MM:SS');
+        
+        int = 1
+        for k = 1:length(vars)
+            
+            data.(simlist(i).name).(zone).
+            
+            
+        
+            
+            
+        
+    
+    
