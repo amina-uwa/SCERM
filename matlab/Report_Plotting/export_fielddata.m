@@ -96,6 +96,8 @@ for i = 1:length(vars)
                                         if ~isempty(ttt)
                                             themean = mean(ydata(sss(ttt)));
                                             accum(m) = themean;
+                                            
+                                            
                                         end
                                     case 'Bottom'
                                         
@@ -145,6 +147,7 @@ for i = 1:length(vars)
             
             if ~isempty(sitei)
                 for nb = 1:length(datearray)
+                    thedata = [];
                     for mb = 1:length(sitei)
                         
                         thedata(mb) = sitei(mb).accum(nb);

@@ -4,7 +4,7 @@ addpath(genpath('functions'));
 addpath(genpath('tuflowfv'));
 
 
-load swan.mat;
+load ../modeltools/matfiles/swan.mat;
 
 load Oxy.mat;
 
@@ -37,12 +37,12 @@ headers = {...
 %
 %
 %
-datearray(:,1) = datenum(2007,01,01,00,00,00):60/(60*24):datenum(2020,01,01,00,00,00);
+datearray(:,1) = datenum(2007,01,01,00,00,00):60/(60*24):datenum(2021,01,01,00,00,00);
 %
 % % 0 for no HD shift, 1 for shift
 
 % Tidal BC files
-create_interpolated_BC_for_inflow_NAR_v1(swan,headers,datearray,0);disp('NAR'); close all;
+%create_interpolated_BC_for_inflow_NAR_v1(swan,headers,datearray,0);disp('NAR'); close all;
 create_interpolated_BC_for_inflow_Fremantle(swan,headers,datearray,0); disp('Fremantle');close all;
 
 
@@ -75,7 +75,7 @@ headers = {...
 
 
 clear datearray;
-datearray(:,1) = datenum(2007,01,01,00,00,00):1:datenum(2020,01,01,00,00,00);
+datearray(:,1) = datenum(2007,01,01,00,00,00):1:datenum(2021,01,01,00,00,00);
 
 create_interpolated_BC_for_inflow_Helena(swan,headers,datearray);   disp('Helena');close all;%DONE
 create_interpolated_BC_for_inflow_Bennet(swan,headers,datearray); disp('Bennet');close all;%DONE

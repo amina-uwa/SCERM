@@ -535,7 +535,6 @@ end
 end
 
 function swan = process_data(swan_add,ver)
-
 swan2 = swan_add;
 clear swan_add;
 
@@ -903,6 +902,8 @@ for k = 1:length(sites)
         
         xdata = swan.(sitename).(vars{i}).Date;
         ydata = swan.(sitename).(vars{i}).Data;
+        
+        figure('visible','off');
         
         plot(xdata,ydata,'.r');
         

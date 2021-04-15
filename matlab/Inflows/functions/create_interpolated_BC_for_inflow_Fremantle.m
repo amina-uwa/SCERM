@@ -406,7 +406,7 @@ clear t_date t_data;
 
 %__________________________________________________________________________
 
-varname = 'TRC_SS1';
+varname = 'WQ_DIAG_TOT_TSS';
 
 % t_depth = swan.s6160258.(varname).Depth;
 % tt = find(t_depth > -0.5);

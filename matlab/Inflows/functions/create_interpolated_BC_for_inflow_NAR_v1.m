@@ -270,7 +270,7 @@ clear t_date t_data;
 
 %__________________________________________________________________________
 
-varname = 'TRC_SS1';
+varname = 'WQ_DIAG_TOT_TSS';
 
 
 SS1_T = create_interpolated_dataset(swan,varname,'s6160262','Bottom',datearray);

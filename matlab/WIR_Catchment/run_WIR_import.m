@@ -15,24 +15,26 @@ addpath(genpath('Functions'));
 
 dirlist = dir('Raw');
 
-for i = length(dirlist)
+for i = 58:length(dirlist)
     
     filelist = dir(['Raw/',dirlist(i).name,'/*.xlsx']);
     
     if strcmpi(filelist(1).name,'WaterQualityDiscreteForSiteCrossTab.xlsx')
         filename = ['Raw/',dirlist(i).name,'/WaterQualityDiscreteForSiteCrossTab.xlsx'];
         type = 'WQ';
-        [rows,cols] = calculate_xls_size(filename);
+%         if i ~= 9
+         [rows,cols] = calculate_xls_size(filename);
+%         end
     else
         filename = ['Raw/',dirlist(i).name,'/WaterLevelsContinuousForSiteCrossTab.xlsx'];
         type = 'Level';
         [rows,cols] = calculate_xls_size_l(filename);
     end
     
-    if i == 9 
-        cols = 'ACX';
-        rows = 41003;
-    end
+%     if i == 9 
+%         cols = 'EV';%ACX
+%         rows = 41003;
+%     end
 %     if i == 32
 %         cols = 'GH';
 %         rows = 30000;
@@ -47,12 +49,13 @@ for i = length(dirlist)
     else
         if i == length(dirlist)
             import_wir_dataset_v2(filename,type,'Append','swan.mat','Row',rows,'Column',cols,...
-                'Remove_NaN',1,'Summerise',0,'Version',2);
+                'Remove_NaN',1,'Summerise',1,'Version',2);
         else
             import_wir_dataset_v2(filename,type,'Append','swan.mat','Row',rows,'Column',cols,...
                 'Remove_NaN',1,'Summerise',0,'Version',2);
         end
     end
+    clear functions
 end
 
 

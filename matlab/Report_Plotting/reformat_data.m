@@ -12,7 +12,7 @@ for i = 1:length(shp)
     zones(i) = {['Zone',num2str(i)]};
 end
 
-outdir = 'Export_v2/';
+outdir = 'Export_v7/';
 
 if ~exist(outdir,'dir')
     mkdir(outdir);
@@ -127,13 +127,13 @@ for i = 1:length(types)
             fprintf(fid,'%4.4f,',BC.Targets_44.(zones{j}).TP.local(k));
             fprintf(fid,'%4.4f,',BC.Targets_44.(zones{j}).TP.Upstream(k));
             fprintf(fid,'%4.4f,',BC.Targets_44.(zones{j}).OXY.local(k));
-            fprintf(fid,'%4.4f,',BC.Wet_44.(zones{j}).OXY.Upstream(k)); 
+            fprintf(fid,'%4.4f,',BC.Targets_44.(zones{j}).OXY.Upstream(k)); 
             
             % Field
             fprintf(fid,'%4.4f,',field.TN.(zones{j}).(types{i})(k));
             fprintf(fid,'%4.4f,',field.TP.(zones{j}).(types{i})(k));
-            fprintf(fid,'%4.4f,',field.Oxy.(zones{j}).(types{i})(k));
             fprintf(fid,'%4.4f,',field.TCHLA.(zones{j}).(types{i})(k));
+            fprintf(fid,'%4.4f,',field.Oxy.(zones{j}).(types{i})(k));
             fprintf(fid,'%4.4f,',field.TEMP.(zones{j}).(types{i})(k));
             fprintf(fid,'%4.4f,',field.SAL.(zones{j}).(types{i})(k));
             
