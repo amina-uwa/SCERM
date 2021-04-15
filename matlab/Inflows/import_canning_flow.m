@@ -1,12 +1,12 @@
-clear all; close all;
+function import_canning_flow(datearray)
 
 addpath(genpath('tuflowfv'));
 
 
 %
-datearray = datenum(2008,01,01): 1/24: datenum(2020,01,01);
+%datearray = datenum(2008,01,01): 1/24: datenum(2021,01,01);
 
-load swan.mat;
+load ../modeltools/matfiles/swan.mat;
 
 [sDate,ind]  = unique(swan.s616027.Flow.Date);
 sData = swan.s616027.Flow.Data(ind);

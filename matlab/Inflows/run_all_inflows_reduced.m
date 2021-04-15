@@ -89,11 +89,13 @@ create_interpolated_BC_for_inflow_Susannah(swan,headers,datearray);   disp('Susa
 
 create_interpolated_BC_for_inflow_Bayswater(swan,headers,datearray);disp('Bayswater');close all; %DONE
 create_interpolated_BC_for_inflow_Jane(swan,headers,datearray);disp('Jane');close all;
-create_interpolated_BC_for_inflow_Canning(swan,headers,datearray);disp('Canning');close all;
 
 create_interpolated_oxygenation_plant_GFD(oxy,headers,datearray);disp('GFD Oxygenation Plants');close all;
 create_interpolated_oxygenation_plant_CAV(oxy,headers,datearray);disp('CAV Oxygenation Plants');close all;
 
+import_canning_flow(datearray);
+
+create_interpolated_BC_for_inflow_Canning(swan,headers,datearray);disp('Canning');close all;
 
 replace_flows_with_calculated;
 

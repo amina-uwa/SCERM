@@ -15,7 +15,7 @@ addpath(genpath('Functions'));
 
 dirlist = dir('Raw');
 
-for i = 58:length(dirlist)
+for i = 61:length(dirlist)
     
     filelist = dir(['Raw/',dirlist(i).name,'/*.xlsx']);
     
